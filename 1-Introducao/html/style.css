@@ -1,0 +1,22 @@
+.grande {
+  font-size: 2.5rem;
+}
+
+.exemplo-43 {
+  width: 200px;
+  height: 200px;
+  display: block;
+  padding: 10px;
+  background-color: aqua;
+  border-radius: 8px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.cor-fundo43 {
+  background-color: rgb(76, 172, 250);
+}

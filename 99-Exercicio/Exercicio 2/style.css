@@ -1,0 +1,29 @@
+.container-circulo {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #999;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.container30 {
+    width: 32px;
+    height: 32px;
+}
+
+.container60 {
+    width: 64px;
+    height: 64px;
+}
+
+.circulo2 {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
+button {
+    padding: 12px 16px;
+    z-index: 99;
+}
