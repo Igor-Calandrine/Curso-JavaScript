@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.botao {
+    margin-right: right;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    background-color: blanchedalmond;
+    position: relative;
+    left: 25%;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
