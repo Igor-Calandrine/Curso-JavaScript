@@ -35,14 +35,14 @@ Adicionando Evetos
         alert("Clicou! - Tela")
     }
 
-    function msg_clicou () {
+    function msg_entrou () {
         console.log("Mouse entrou - console")
     }
 
     const botao = document.querySelector("button")
 
     botao.addEventListener("click", msg_clicou)
-    botao.addEventListener("mouseenter", msg_clicou)
+    botao.addEventListener("mouseenter", msg_entrou)
 
 /*
     Para remover os eventos basta utilizar da mesma forma o removeEventListener, coloque em comentário para que você possa ver a função sendo ativada antes de ser removida.*/ 
@@ -67,7 +67,7 @@ Adicionando Evetos
 *   toggle("classe", false) - sempre remove
 */
 
-console.log("\nExemplo 3")
+console.log("\n\nExemplo 3")
 
 function alterar_fundo () {
     const div43 = document.querySelector(".exemplo-43")
@@ -95,7 +95,7 @@ Window
     
     */
 
-    console.log("\nExemplo 4")
+    console.log("\n\nExemplo 4")
 
     function dados_window () {
         const largura_janela = window.innerHeight

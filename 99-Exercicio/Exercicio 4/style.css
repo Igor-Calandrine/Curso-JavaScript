@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+nav {
+    background-color: aquamarine;
+    display: grid;
+    gap: 5px;
+
+}
+
+.desativado {
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.ativado {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    pointer-events: all;
+}
+
+button {
+    padding: 12px 8px;
+    display: block;
+    margin: 15px auto 0 auto;
+    
+
+}
