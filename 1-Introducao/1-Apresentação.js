@@ -75,27 +75,37 @@ Tipos de Dados
       Number representa qualquer número, seja inteiro ou decimal.
       !Diferentemente de Python, JavaScript não separa int e float, ambos são “number” e todos os      números são representados como valores flutuantes.
       
-      Temos aqui o mesmo problema que em todas as linguagens que utilizam números binários para representar números flutuantes, sempre iremos ter erros quando for feita comparações deivido a arredondamentos.
+      Temos aqui o mesmo problema que em todas as linguagens que utilizam números binários para representar números flutuantes, sempre iremos ter erros quando for feita comparações devido a arredondamentos.
 
       Para realizar cálculos financeiros, principalmente quando precisam ser bem precisos como é feito com bitcoins em que se consideram várias casa, talvez você queira efetuar cálculos financeiros importantes usando inteiros adaptados. Você poderia manipular valores monetários como centavos
       inteiros, em vez de frações de moeda.
-
 
       let idade = 25
       let temperatura = 22.5
       const negativo = -10
 
+      ?Os operdores matemáticos utilizados no Python continuam sendo os mesmo no JS
+
+      Devido a tipagem dinâmica do JS muitas vezes pode ser útil transformar um número que esta sendo lido como uma string em tipo número colocando o sinal de (+) na frente.
+
+*      Ex: 
+*          "2" + 3 - Nos dará o resultado 23, pois ela irá concatenar
+*          +"2" + 3 - Nos dará o resultado de 5, pois o "2" será transformado para tipo número
+
 *   Boolean
       Um valor booleano representa verdadeiro ou falso, sim ou não. Só existem dois valores possíveis desse tipo. 
 !     Observe que diferentemente de Python os valores boolean são em letra minúscula
 
-
-
       Os valores booleanos têm um método toString() que pode ser usado para convertê-los nas strings
       “true” ou “false”, mas não possuem qualquer outro método útil. 
 
-      true (verdadeiro)
-      false (falso)
+      true, 1  (verdadeiro)
+      false, 0 (falso)
+
+      ?Os operadores de comparação do Python continuam sendo os mesmos para JS, mas é importante destacar que a tipagem dinâmica do JS fará agora com que usemos (===) no código.
+*      Ex:   10 == "10"  - Teremos true
+*            10 === "10" - Teremos false
+
 
 *   Undefined / Null
       Significa que uma variável foi declarada mas não recebeu valor. A diferença entre as duas é que o valor #Undefined é atribuido automaticamente e Null é atribuido pelo programador. A sua prática será vista mais adiante no próximo capítulo.
