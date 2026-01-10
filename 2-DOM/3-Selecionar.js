@@ -40,7 +40,6 @@ Selecionar um grupo
 console.log("\n\tExemplo 2")
 
 const liAll = document.querySelectorAll("li")
-
 console.log(liAll.length)
 
 liAll.forEach(
@@ -50,8 +49,22 @@ liAll.forEach(
 )
 
 /*
+Selecionando um atributo
+    É possível selecionar um atrobuto dentro de uma tag, basta adicionar .getAttribute() após a variavel em que se guarda o querySelectorAll() ou escreve-lo logo em seguida. Vamos ver o exemplo abaixo*/ 
+
+console.log("\n\tExemplo 3")
+
+const liEx31 = document.querySelector(".li1").getAttribute("name")
+console.log("1 - " + liEx31)
+
+const liEx32 = document.querySelector(".li1")
+console.log("2 - " + liEx32.getAttribute("name"))
+
+
+
+/*
 O Elemento Raiz do Documento
-    Todo documento HTML posseui uma estrutura invisível que sustenta tudo o que aparece na tela. No JS, esse elemento é representado por #document.documentElement. Ele é o ponto mais alto da hierarquia do documento, o nó que contém absolutamente todo o restante da página. Por essa razão, ele está sempre presente em qualquer documento HTML válido, independente da complexidade ou simplicidade da página.
+    Todo documento HTML possui uma estrutura invisível que sustenta tudo o que aparece na tela. No JS, esse elemento é representado por #document.documentElement. Ele é o ponto mais alto da hierarquia do documento, o nó que contém absolutamente todo o restante da página. Por essa razão, ele está sempre presente em qualquer documento HTML válido, independente da complexidade ou simplicidade da página.
     
     Usar #document.documentElement é apropriado sempre que a interação for interagir com características globais da página, e não com elementos específicos de conteúdo. Ele não representa uma parte do site, mas sim o site como um todo.
 
