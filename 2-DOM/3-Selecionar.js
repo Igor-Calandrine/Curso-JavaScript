@@ -30,7 +30,7 @@ p2.textContent = "Selecionado pela classe"
 Selecionar um grupo
     Ao selecionar uma tag ou classe, é fundamental entender que o resultado será apenas sobre o primeiro encontrado na página web, para que o grupo toda sofre a interação é necessário que se utilize o exemplo abaixo para que o JS localize todos os elementos que correspondem ao seletor CSS, retornando uma coleção desses elementos para que possam ser manipulados individualmente.
     
-    O resultado dessa busca é uma NodeList, que funciona como uma lista ordenada de elementos, respeitando a ordem em que eles aparecem no HTML. A NodeList possui algumas características importantes:
+    O resultado dessa busca é uma NodeList, que funciona como uma lista ordenada de elementos, respeitando a ordem em que eles aparecem no HTML. A NodeList é estática e possui algumas características importantes:
         *Possui índices
         *Possui propriedad .lenght
         *Pode ser percorrida com forEach
@@ -47,6 +47,20 @@ liAll.forEach(
         item.textContent = "Todos li foram selecionados e modificados"
     } 
 )
+
+/*
+É possível transformar uma NoleList em Array quando se quer utlizar seus métodos, como pop() e entre outros*/
+
+console.log("\n\tExemplo 2.1")
+
+console.log(liAll) //Repare no console uma NodeList
+
+liAllArray = Array.from(liAll)
+console.log(liAllArray) //repare no console que não é mais uma NodeList
+
+liAllArray.pop()
+console.log(liAllArray)
+
 
 /*
 Selecionando um atributo
