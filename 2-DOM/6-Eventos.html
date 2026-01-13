@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <style>
+      body {
+         height: 200vh;
+      }
+
+      .pai, .pai2 {
+         width: max-content;
+         padding: 8px;
+         background-color: rgb(253, 153, 133);
+         display: grid;
+         grid-template-columns: auto auto;
+         gap: 10px;
+         justify-content: start;
+      }
+
+      .filho {
+         width: 150px;
+         height: 150px;
+         background-color: rgb(253, 197, 67);
+      }
+
+      .preto {
+         background-color: black;
+      }
+   </style>
+
+   <div class="pai">
+      <div class="filho" id="filho1"></div>
+      <div class="filho" id="filho2"></div>
+      <div class="filho" id="filho3"></div>
+      <div class="filho" id="filho4"></div>
+      <div class="filho" id="filho5"></div>
+      <div class="filho" id="filho6"></div>
+   </div>
+
+   <div class="filho" id="filhoSozinho"></div>
+
+   <style>
+      .pai2 {
+         margin-top: 30px;
+      }
+   </style>
+
+
+   <div class="pai2">
+      <div class="filho" id="filho7"></div>
+      <div class="filho" id="filho8"></div>
+      <div class="filho" id="filho9"></div>
+      <div class="filho" id="filho10"></div>
+      <div class="filho" id="filho11"></div>
+      <div class="filho" id="filho12"></div>
+   </div>
+
+   <script src="6-Eventos.js"></script>
+</body>
+</html>
