@@ -24,7 +24,7 @@ addEventListener
 */ 
 
 /** @type {HTMLAreaElement} */
-//Acima foi colocado o type para que o JS recebe na IDE sugestões de eventos
+//Acima foi colocado o type para que o JS receba na IDE sugestões de eventos
 const divPai = document.querySelector(".pai")
 
 console.log("\tExemplo 1.1 - Função de callback")
