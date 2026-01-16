@@ -48,8 +48,6 @@ console.log("\n\tExemplo 2.1")
 console.log(ex2.offsetHeight)
 console.log(ex2.offsetWidth)
 
-console.log(ex2.getBoundingClientRect())
-
 /*
 getBoundingClientRect()
    Enquanto propriedades como offsetTop e offsetLeft descrevem posições dentro da estrutura da página, getBoundingClientRect() ignora o “mapa” do documento e olha apenas para a “câmera”, isto é, "onde este elemento está exatamente agora, na tela do usuário?"
@@ -65,12 +63,10 @@ getBoundingClientRect()
    ?Daqui também vem o rect da criação de jogos, por isso é bem importante lembrar o seu significado
 */ 
 
-console.log("\n\tExemplo 3")
-
-console.log("\n\tRect .ex1")
+console.log("\n\tExemplo 3 - Rect .ex1")
 console.log(ex1.getBoundingClientRect())
 
-console.log("\n\tRect .ex2")
+console.log("\n\tExemplo 3 - Rect .ex2")
 console.log(ex2.getBoundingClientRect().top)
 console.log(ex2.getBoundingClientRect().right)
 console.log(ex2.getBoundingClientRect().bottom)

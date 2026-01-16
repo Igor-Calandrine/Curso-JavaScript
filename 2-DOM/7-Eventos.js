@@ -2,11 +2,12 @@
 addEventListener
    Um evento é qualquer coisa que o usuário faz ou que o navegador dispara:
    *click        - quando alguém clica
-   *dbleClick  - quando alguém da um click duplo
+   *dbleClick    - quando alguém da um click duplo
    *mousemove    - quando o mouse move
 
    *keydown      - quando uma tecla é pressionada
    *keyup        - quando uma tecla é solta
+   *key          - detecta a tecla pressionada
 
    *scroll       - quando a página rola
 
@@ -21,7 +22,109 @@ addEventListener
    A estrutura para chamar o #addEventListener:
 
    *Ex: elemento.addEventListener("evento", função)
-*/ 
+
+   Para que não fique confuso o exemplos abaixo, os exemplos abaixo poderão ser acionado ou removidos com uma tecla.
+
+   *keydown, keyup, key
+      A interação por teclado é uma das formas mais antigas e fundamentais de comunicação entre o usuário e o computador. Em aplicações Web, especialmente formulários, sistemas interativos e jogos, o JS fornece mecanismos específicos para capturar e interpretar ações do teclado. 
+
+      Os eventos do teclado são eventos do DOM disparados quando o susuário pressiona ou solta uma tecla física do teclado. Eles permitem que o JS reaja imediatamente às ações do usuário, esses eventos são representados pelo objeto #KeyboardEvent.
+
+      Agora todos os exemplos terão uma flag de ativação para que não fique confuso o console, pois também o console poderá não ter a ordem correta dos exemplos abaixo. Também foi configurado no HTML para que o JS seja carregado primeiramente, para depois os outros componentes.
+*/
+
+let estado = {Ex11:true, Ex12:false, Ex13:false, Ex14:false, Ex15:false}
+
+function limparConsole() {
+   document.addEventListener("keydown", (event) => {
+      if (event.code === "KeyC") {
+         console.clear()
+      } 
+   })
+}
+
+limparConsole()
+
+//-----------------------------------------------------------------------------
+
+
+if (estado["Ex11"]) {
+
+   document.addEventListener("keydown", (event) => {
+      console.log("Exemplo 1.1 - keydown")
+      console.log(true) // Aqui verificamos se alguma tecla foi pressionada
+      console.log(event.key) //Aqui verificamos qual tecla foi pressionada
+   })
+
+}
+
+/*
+Agora iremos especificar se alguma tecla foi apertado no form para isso devemos primeiro desativar o evento do Ex1*/
+
+const inputForm = document.querySelector("form") 
+if (estado["Ex12"]) {
+
+   inputForm.addEventListener("keydown", (event) => {
+      console.log("Exemplo 1.2 - keydown")
+      console.log(true + " || " + event.key)
+   })
+
+}
+
+/*Agora da mesma forma iremos registrar quando se solta uma tecla, é muito importante para quem quer trabalhar como GameDev. É necessário para registrar quando um estado pode ser alterado*/ 
+if (estado["Ex13"]) {
+   
+   document.addEventListener("keyup", (event) => {
+      console.log("Exemplo 1.3 - keyup")
+      console.log(true + " || " + event.key)
+   })
+
+}
+
+/*É possível também saber se uma tecla está sendo segurada ao ser pressionada*/ 
+
+if (estado["Ex14"]) {
+
+   document.addEventListener("keypress", (event) => {
+      console.log("Exemplo 1.4 - keypress")
+      console.log(true + " || " + event.key)
+   })
+
+}
+
+/*
+Para evitar que tenha que se diferenciar um tecla quando é maiúscula ou minúscula, pode-se usar event.code, ela irá retorna a posição da tecla física. Observe que foi utilizado no inpicio desse módulo para limpar o console com a tecla C, observe também que o valor é uma String*/
+
+if (estado["Ex15"]) {
+
+   document.addEventListener("keydown", (event) => {
+      console.log("Exemplo 1.5 - event.code")
+      console.log(event.key + " || " + event.code)
+   })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /** @type {HTMLAreaElement} */
 //Acima foi colocado o type para que o JS receba na IDE sugestões de eventos
