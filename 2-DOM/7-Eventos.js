@@ -1,39 +1,40 @@
 /*
 addEventListener
    Um evento é qualquer coisa que o usuário faz ou que o navegador dispara:
-   *click        - quando alguém clica
-   *dbleClick    - quando alguém da um click duplo
-   *mousemove    - quando o mouse move
-
    *keydown      - quando uma tecla é pressionada
    *keyup        - quando uma tecla é solta
+   *keypress     - quando se segura uma tecla pressionada
    *key          - detecta a tecla pressionada
+   
+   *click        - quando alguém clica
+   *dblClick     - quando alguém da um click duplo
+   *mousemove    - quando o mouse move
+   *mouseout     - quando o mouse entra em determinada área
+   *mouseenter   - quando o mouse sai de determinada área
 
    *scroll       - quando a página rola
 
    *load         - quando a página terminou de carregar
-   *input        - quando algo foi difitado
+   *input        - quando algo foi digitado
 
    *touchstart   - dedo tocou na tela
 
    Ainda há muitos eventos que o estudante pode procurar de acordo com seus objetivos
 
-   É boa prática separar a função de callback do addEventListener, ou seja, declarar uma função ao invés de passar diretamente uma função anônima.
+   É boa prática separar a função de callback do addEventListener, ou seja, declarar uma função ao invés de passar diretamente uma função anônima. A função de callBack não será utilizada aqui porque gostaria que acontecesse um processo repetição da escrita e leitura para ter um melhor apredizado.
    A estrutura para chamar o #addEventListener:
 
    *Ex: elemento.addEventListener("evento", função)
 
    Para que não fique confuso o exemplos abaixo, os exemplos abaixo poderão ser acionado ou removidos com uma tecla.
 
-   *keydown, keyup, key
+   *keydown, keyup, key, keypress
       A interação por teclado é uma das formas mais antigas e fundamentais de comunicação entre o usuário e o computador. Em aplicações Web, especialmente formulários, sistemas interativos e jogos, o JS fornece mecanismos específicos para capturar e interpretar ações do teclado. 
 
       Os eventos do teclado são eventos do DOM disparados quando o susuário pressiona ou solta uma tecla física do teclado. Eles permitem que o JS reaja imediatamente às ações do usuário, esses eventos são representados pelo objeto #KeyboardEvent.
 
-      Agora todos os exemplos terão uma flag de ativação para que não fique confuso o console, pois também o console poderá não ter a ordem correta dos exemplos abaixo. Também foi configurado no HTML para que o JS seja carregado primeiramente, para depois os outros componentes.
+      Agora todos os exemplos terão uma flag de ativação para que não fique confuso o console, pois também o console poderá não ter a ordem correta dos exemplos abaixo. Também foi configurado no HTML para que o JS seja carregado primeiramente (#defer), para depois os outros componentes.
 */
-
-let estado = {Ex11:true, Ex12:false, Ex13:false, Ex14:false, Ex15:false}
 
 function limparConsole() {
    document.addEventListener("keydown", (event) => {
@@ -42,10 +43,10 @@ function limparConsole() {
       } 
    })
 }
-
 limparConsole()
 
 //-----------------------------------------------------------------------------
+let estado = {Ex11:false, Ex12:false, Ex13:false, Ex14:false, Ex15:false}
 
 
 if (estado["Ex11"]) {
@@ -59,7 +60,7 @@ if (estado["Ex11"]) {
 }
 
 /*
-Agora iremos especificar se alguma tecla foi apertado no form para isso devemos primeiro desativar o evento do Ex1*/
+Agora iremos especificar se alguma tecla foi apertado no form para isso devemos primeiro selecionar onde o evento irá ocorrer.*/
 
 const inputForm = document.querySelector("form") 
 if (estado["Ex12"]) {
@@ -72,6 +73,7 @@ if (estado["Ex12"]) {
 }
 
 /*Agora da mesma forma iremos registrar quando se solta uma tecla, é muito importante para quem quer trabalhar como GameDev. É necessário para registrar quando um estado pode ser alterado*/ 
+
 if (estado["Ex13"]) {
    
    document.addEventListener("keyup", (event) => {
@@ -104,120 +106,212 @@ if (estado["Ex15"]) {
 
 }
 
+/*
+   *click, dblclick, mousemove
+      A interação por maouse é um dos pilares das interfaces gráficas modernas. No desenvolvimento Web, o JS permite capturar e interpretar ações do usuário por meio dos eventos de mouse, possibilitando desde simples cliques em botões até sistemas complexos de arrastar, desenhar e controlar jogos.
 
+      Esses eventos são representados pelo objeto #MouseEvent, que contém informações detalhadas sobres a interação.
 
+      Abaixo temos um exemplo que registra um click e outro dbclick, é bom que apenas um deles estejam ativados para o mesmo elemento para não causar conflitos lógicos.
+*/ 
+let estado2 = {Ex21:false, Ex22:false, Ex23:false, Ex24:false, Ex25:false}
 
+if (estado2["Ex21"]) {
 
+document.addEventListener("click", (event) => {
+   console.log("Exemplo 2.1 - click")
+   console.log(true)
+})
 
+}
 
+if (estado2["Ex22"]) {
 
+   document.addEventListener("dblclick", (event) => {
+      console.log("Exemplo 2.2 - dblclick")
+      console.log(true)
+   })
 
+}
 
+/*Temos agora um evento que ocorre sempre que o cursor do mouse de move sobre um elemento. Temos que tomar muito cuidado com ele pois o registro de informações pode deixar sua página lenta, pois ele é registrado várias vezes por segundo.*/
 
+if (estado2.Ex23) {
 
+   document.addEventListener("mousemove", () => {
+      console.log("Exemplo 2.3 - mousemove")
+      console.log(true)
+   })
 
+}
 
+/*Podemos verificar se ao mover o mouse ele entrou em determinada área ou sai. */
+const divFilhoSozinho = document.querySelector("#filhoSozinho")
 
+if (estado2["Ex24"]) {
 
+   divFilhoSozinho.addEventListener("mouseenter", () => {
+      console.log("Exemplo 2.4 - mouseenter")
+      console.log("Entrou")
+   })
 
+   divFilhoSozinho.addEventListener("mouseout", () => {
+      console.log("Exemplo 2.4 - mouseout")
+      console.log("Saiu")
+   })
+   
+}
 
-
-
-
-
-
-/** @type {HTMLAreaElement} */
-//Acima foi colocado o type para que o JS receba na IDE sugestões de eventos
+/*Observe que ser for usadao o .pai como referência teremos uma informação que o mouse saiu do elemento pai ao entrar no elemento filho. Por isso é importante conhecer o #mouseleave, que é quando o mouse sai completamente do elemento, ignorando seus filhos
+*/
 const divPai = document.querySelector(".pai")
 
-console.log("\tExemplo 1.1 - Função de callback")
+if (estado2["Ex25"]) {
 
-function clickPai () {
-   console.log("\n1.1 - clicou")
+   divPai.addEventListener("mouseout", () => {
+      console.log("Exemplo 2.5 - mouseout divPai")
+   })
+
+   divPai.addEventListener("mouseleave", () => {
+      console.log("Exemplo 2.5 - mouseleave divPai")
+   })
+
 }
-divPai.addEventListener("click", clickPai)
-
-//-------
-console.log("\tExemplo 1.2 - Função definida dentro do evento")
-
-divPai.addEventListener("click", function () {
-   console.log("1.2 - clicou")
-})
-
-//-------
-console.log("\tExemplo 1.3 - Função com Arrow")
-
-divPai.addEventListener("click", () => {
-   console.log("1.3 - clicou")
-})
 
 /*
-Propriedades do event
-   Há algumas propriedades do event que são importantes de conhecer, observe no exemplo que a função deve receber o parâmetro event pois há inúmeras propriedade e métodos nele.
-      *event.target       - Quem foi clicado
-      *event.type         - Tipo de evento
-      *event.clientX/Y    - Posição do mouse
-      *event.key          - Tecla pressionada
-      *preventDefault()   - Cancela ação padrão
-   */ 
+   *scroll
+      O evento é disparado sempre que ocorre uma mudança na posição de rolagem de um elemento que possui conteúdo maior do que sua área visível, ou da própria janela do navegador (window)
+      
+      Em termos práticos, ele permite ao JS reagir ao movimento do usuário pela página, tornando possível criar efeitos visuais, carregar conteúdo dinamicamente, sincronizar elementos com a rolagem e controlar a experiência de navegação, porém deve-se tomar cuidado com o seu uso, pois ela facimente pode travar sua páginar, a manipulação no DOOM são muito custosas.*/ 
 
-console.log("\n\tExemplo 2 - Testando eventos")
+let estado3 = {Ex31:false, Ex32:false}
 
-divPai.addEventListener("dblclick", (event) => {
-   console.log(event) //Abra no console para ver suas propriedades
-   console.log(event.type)
-   console.log(event.target)
-   console.log(event.clientX, event.clientY)
-   console.log(event.composedPath())
-})
+if (estado3["Ex31"]) {
 
-divPai.addEventListener("mouseenter", (event) => {
-   console.log("\nMouse entrou no elemento pai")
-   console.log(event.clientX, event.clientY)
-})
+   document.addEventListener("scroll", () => {
+      console.log("Exemplo 3.1 - scroll - " + true)
+   })
+   
+}
 
-window.addEventListener("scroll", (event) => {
-   console.log(event.type, event)
-})
+/*Podemos ter informações dos valores que representam a posição atual do viewport em relação ao documento, como esse é um evento do window, não se deve usar document para ter acesso as informações da barra lateral de sua página.*/
+
+if (estado3["Ex32"]) {
+
+   document.addEventListener("scroll", () => {
+      console.log("Exemplo 3.2 - scrollX || scrollY")
+      console.log(window.scrollX + " || " + window.scrollY)
+   })
+}
+
+/*
+event.target e event.currentTarget
+   Agora que já vimos um pouco sober eventos é importante que saibamos diferenciar quais são esse elementos que muitas vezem pode causar confunsão por termos container que estão dentro um do outro.
+   
+   *event.target
+      Representa o elemento mais interno onde o evento realmente ocorreu, é o alvo original
+      
+   *event.currentTarget
+      Representa o elemento que está executando o listener no momento, ele irá apresentar os elementos da árvore a partir do ponto pedido*/
+
+let estado4 = {Ex41:false, Ex42:false}
+
+if (estado4["Ex41"]) {
+   document.addEventListener("click", (event) => {
+         console.log("Exemplo 4.1 - event.target")
+         console.log(event.target)
+      })
+
+}
+const body = document.querySelector("body")
+const pai = document.querySelector(".pai")
+
+if (estado4["Ex42"]) {
+
+   body.addEventListener("click", (event) => {
+      console.log("Exemplo 4.2 - event.currentTarget - body")
+      console.log(event.currentTarget)
+   })
+
+   pai.addEventListener("click", (event) => {
+      console.log("Exemplo 4.2 - event.currentTarget - .pai")
+      console.log(event.currentTarget)
+   })
+}
+
+/*
+preventDefault()
+   Em aplicações Web, muitas interações so usuário possuem comportamentos padrão definidos pelo navegador. Esses comportamentos existem para garantir usabilidade, acessibilidade e consistência entre sites. No entanto, ao desenvolver interfaces interativas ou sistemas mais complexos, muitas vezes é necessário impedir esse comportamento padrão e assumir o controle total da ação.
+   
+   Surge então um método do objeto event usado para cancelar o comportamento padrão do navegador associado a um evento. Ele não impede o evento de existir, apenas impede a ação padrão que o navegador executaria.*/ 
+
+let estado5 = {Ex51:false, Ex52:false, Ex53:false, Ex54:true}
+
+const link = document.querySelector("a")
+
+if (estado5["Ex51"]) {
+
+   document.addEventListener("keydown", (event) => {
+      if (event.code === "KeyP") {
+         console.log("Exemplo 5.1 - preventDefault()")
+         console.log("Link desativado")
+         link.addEventListener("click", (event) => {
+            event.preventDefault()
+         })
+      }
+   })
+
+}
 
 /*
 this
-   A palavra chave this é uma palavra especial de JavaScript, que pode fazer referência a diferentes objetos dependendo do contexto. No caso de eventos, ela fará referência ao elemento em que addEventListener foi adicionado, ele será usado para evitar de ficar reescrevendo muitas vezes o elemento.*/ 
+   A palavra chave this é uma palavra especial de JavaScript, que pode fazer referência a diferentes objetos dependendo do contexto. No caso de eventos, ela fará referência ao elemento em que addEventListener foi adicionado, ele será usado para evitar de ficar reescrevendo muitas vezes o mesmo elemento.
+   
+   É importante lembrar que this não funciona com Arrow function. Sem um objeto para apontar ele será o window.*/ 
 
-console.log("\n\tExemplo 3.1 - This")
-addEventListener("keydown", (event) => {
-   if (event.key === "g" || event.key === "G") {
-      console.clear()
-      console.log(event.key)
+if (estado5["Ex52"]) {
+
+   document.addEventListener("keydown", (event) => {
+      if (event.code === "KeyT") {
+         console.log("\n\tExemplo 5.2 - this com window")
+         console.log(this)
+      }
+   })
+
+}
+
+console.log("\n\tExemplo 5.3 - this")
+const filho11 = document.querySelector("#filho12")
+
+if (estado5["Ex53"]) {
+
+   filho11.addEventListener("click", function addClass() {
+      console.log("\n\tExemplo 5.3 - this com objeto")
+      console.log(filho11)
       console.log(this)
-   }
-})
+      this.classList.toggle("preto")
+   })
 
-//É importante lembrar que this não funciona com Arrow function. Sem um objeto para apontar ele será o window
-
-console.log("\n\tExemplo 3.2 - This")
-const filho11 = document.querySelector("#filhoSozinho")
-
-filho11.addEventListener("click", function filho11Ativo() {
-   console.clear()
-   console.log(this)
-   console.log(this.classList.toggle("ativo"))
-   console.log(this.classList)
-})
+}
 
 /*
 forEach e Eventos
-   O método addEventListener é adicionado à um único elemento, então é necessário um loop entre elementos de uma lista, para adicionarmos à cada um deles.
-   */ 
+   O método addEventListener é adicionado à um único elemento, então é necessário primeiramente chamar um loop para que seja implementado o evento em cada item dessa lista.*/ 
 
 console.log("\n\tExemplo 4 - forEach")
 const filhosAll = document.querySelectorAll(".pai2 .filho")
 
-filhosAll.forEach( (item) => {
-   item.addEventListener("click", () => {
-      console.clear()
-      item.classList.toggle("preto")
+if (estado5["Ex54"]) {
+   
+   filhosAll.forEach((item) => {
+      
+      item.addEventListener("click", () => {
+         console.log("\n\tExemplo 5.4 - forEach e eventos")
+         item.classList.toggle("preto")
+      })
    })
-})
+
+}
+
 
 
