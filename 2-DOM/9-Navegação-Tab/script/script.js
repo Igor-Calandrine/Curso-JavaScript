@@ -37,16 +37,29 @@ function perguntasFaqc() {
    perguntasFaq[0].classList.add("js-desativa-p")
 
 }
- 
 
+function scrollTitulo () {
+   const linkInterno = document.querySelectorAll("a[href^='#']")
+   const tituloInternos = document.querySelectorAll(".js-scroll")
 
+   if (linkInterno.length) {
+      
+      linkInterno.forEach((item, index) => {
+         
+         item.addEventListener("click", (event) => {
+            event.preventDefault()
 
-
-
-
+            const localScroll = {top: tituloInternos[index].offsetTop, behavior: "smooth"}
+            
+            window.scroll(localScroll)
+         })
+      })
+   }
+}
 
 animaisTexto()
 perguntasFaqc()
+scrollTitulo ()
 
 
 
