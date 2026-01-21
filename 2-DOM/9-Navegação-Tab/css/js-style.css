@@ -11,3 +11,13 @@ aside .pergunta.js-desativa-p::after {
     overflow: hidden !important;
     opacity: 0 !important;
 }
+
+.js-scrollAnimação {
+    transform: translate3d(-100px, 0, 0) !important;
+    opacity: 0 !important;
+    transition: 1.5s !important;
+}
+
+.js-scrollAnima {
+    transition: 1.5s;
+}

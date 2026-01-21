@@ -70,7 +70,7 @@ main h1, aside h2 {
 @keyframes show {
     from {
         opacity: 0;
-        transform: translate3d(+40px, 0, -150px);
+        transform: translate3d(+40px, 0, -50px);
     }
     to {
         opacity: 1;
@@ -169,7 +169,7 @@ aside .pergunta:before {
     transition: 0.5s;
 }
 
-aside:hover .pergunta::before{
+.pergunta:hover::before{
     background-color: #ff9428;
 }
 
