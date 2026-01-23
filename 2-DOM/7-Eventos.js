@@ -183,9 +183,9 @@ if (estado2["Ex25"]) {
       O evento é disparado sempre que ocorre uma mudança na posição de rolagem de um elemento que possui conteúdo maior do que sua área visível, ou da própria janela do navegador (window)
       
       Em termos práticos, ele permite ao JS reagir ao movimento do usuário pela página, tornando possível criar efeitos visuais, carregar conteúdo dinamicamente, sincronizar elementos com a rolagem e controlar a experiência de navegação, porém deve-se tomar cuidado com o seu uso, pois ela facimente pode travar sua páginar, a manipulação no DOOM são muito custosas.*/ 
+let estado3 = {Ex31:false, Ex32:false, Ex33:false, Ex34:false}
 
-let estado3 = {Ex31:false, Ex32:false}
-
+estado3.Ex31 = false
 if (estado3["Ex31"]) {
 
    document.addEventListener("scroll", () => {
@@ -194,8 +194,9 @@ if (estado3["Ex31"]) {
    
 }
 
-/*Podemos ter informações dos valores que representam a posição atual do viewport em relação ao documento, como esse é um evento do window, não se deve usar document para ter acesso as informações da barra lateral de sua página.*/
+      /*Podemos ter informações dos valores que representam a posição atual do viewport em relação ao documento, como esse é um evento do window, não se deve usar document para ter acesso as informações da barra lateral de sua página.*/
 
+estado3.Ex32 = false
 if (estado3["Ex32"]) {
 
    document.addEventListener("scroll", () => {
@@ -205,6 +206,34 @@ if (estado3["Ex32"]) {
 }
 
 /*
+   *window.scroll()
+      É um método usado para mover a área visível (viewport) da janela para uma posição específica da página. Com esse método é possível realizar animações elementares de scroll ao click do usuário. Nós teremos duas formas de sixtaxe:
+      *Ex: window.scroll(x,y)
+*/ 
+
+estado3.Ex33 = false
+if (estado3["Ex33"]) {
+
+   document.addEventListener("click", () => {
+      window.scroll(0, 400)
+      console.log(window.scrollY)
+   })
+}
+
+/*
+      Hoje há uma forma mais usada para permitir a animação do scroll de forma mais suave, para isso é utilizado um objeto.
+      *Ex: window.scroll({left:0, top:0, behavior:"smooth"})
+*/
+
+estado3.Ex34 = false
+if (estado3["Ex34"]) {
+   document.addEventListener("click", () => {
+      window.scroll({top:600, behavior:"smooth"})
+      console.log(scrollY)
+   })
+}
+      
+/*
 event.target e event.currentTarget
    Agora que já vimos um pouco sober eventos é importante que saibamos diferenciar quais são esse elementos que muitas vezem pode causar confunsão por termos container que estão dentro um do outro.
    
@@ -212,20 +241,24 @@ event.target e event.currentTarget
       Representa o elemento mais interno onde o evento realmente ocorreu, é o alvo original
       
    *event.currentTarget
-      Representa o elemento que está executando o listener no momento, ele irá apresentar os elementos da árvore a partir do ponto pedido*/
-
+      Representa o elemento que está executando o listener no momento, ele irá apresentar os elementos da árvore a partir do ponto pedido
+*/
 let estado4 = {Ex41:false, Ex42:false}
 
+estado4.Ex41 = false
 if (estado4["Ex41"]) {
+
    document.addEventListener("click", (event) => {
          console.log("Exemplo 4.1 - event.target")
          console.log(event.target)
       })
 
 }
+
 const body = document.querySelector("body")
 const pai = document.querySelector(".pai")
 
+estado4.Ex42 = false
 if (estado4["Ex42"]) {
 
    body.addEventListener("click", (event) => {
@@ -244,11 +277,11 @@ preventDefault()
    Em aplicações Web, muitas interações so usuário possuem comportamentos padrão definidos pelo navegador. Esses comportamentos existem para garantir usabilidade, acessibilidade e consistência entre sites. No entanto, ao desenvolver interfaces interativas ou sistemas mais complexos, muitas vezes é necessário impedir esse comportamento padrão e assumir o controle total da ação.
    
    Surge então um método do objeto event usado para cancelar o comportamento padrão do navegador associado a um evento. Ele não impede o evento de existir, apenas impede a ação padrão que o navegador executaria.*/ 
-
 let estado5 = {Ex51:false, Ex52:false, Ex53:false, Ex54:true}
 
 const link = document.querySelector("a")
 
+estado5.Ex51 = false
 if (estado5["Ex51"]) {
 
    document.addEventListener("keydown", (event) => {
@@ -269,6 +302,7 @@ this
    
    É importante lembrar que this não funciona com Arrow function. Sem um objeto para apontar ele será o window.*/ 
 
+estado5.Ex52 = false
 if (estado5["Ex52"]) {
 
    document.addEventListener("keydown", (event) => {
@@ -283,6 +317,7 @@ if (estado5["Ex52"]) {
 console.log("\n\tExemplo 5.3 - this")
 const filho11 = document.querySelector("#filho12")
 
+estado5.Ex53 = false
 if (estado5["Ex53"]) {
 
    filho11.addEventListener("click", function addClass() {
@@ -301,6 +336,7 @@ forEach e Eventos
 console.log("\n\tExemplo 4 - forEach")
 const filhosAll = document.querySelectorAll(".pai2 .filho")
 
+estado5.Ex54 = false
 if (estado5["Ex54"]) {
    
    filhosAll.forEach((item) => {

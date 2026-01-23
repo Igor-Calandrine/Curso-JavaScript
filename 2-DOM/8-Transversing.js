@@ -9,7 +9,6 @@ Trasversing
 estado1 = {Ex1:false, Ex2:false, Ex3:false}
 
 estado1["Ex1"] = false
-
 if (estado1["Ex1"]) {
 
    console.log("\n\tExemplo 1.1 - outerHTML")
@@ -25,7 +24,6 @@ if (estado1["Ex1"]) {
 */ 
 
 estado1["Ex2"] = false
-
 if (estado1["Ex2"]) {
 
    console.log("\n\tExemplo 1.2 - innerHTML")
@@ -53,12 +51,12 @@ if (estado1["Ex3"]) {
 /*
 Obtendo os elemento agora e tendo acesso ao seu conteúdo, podemos fazer alterações como desejarmos*/ 
 
-estado2 = {Ex1:false, Ex2:false, Ex3:false}
+estado2 = {Ex21:false, Ex22:false, Ex23:false}
 
 //Observe que no exemplo abaixo foi alterado para um parágrafo e alterada sua classe
 
-estado2["Ex1"] = false
-if (estado2["Ex1"]) {
+estado2["Ex21"] = false
+if (estado2["Ex21"]) {
 
    console.log("\n\tExemplo 2.1 - Modificando outerHTML")
    
@@ -69,8 +67,9 @@ if (estado2["Ex1"]) {
 }
 
 //No exemplo abaixo acrescentamos <h1> ao <li> e alteramos seu texto
-estado2["Ex2"] = false
-if (estado2["Ex2"]) {
+
+estado2["Ex22"] = false
+if (estado2["Ex22"]) {
 
    console.log("\n\tExemplo 2.2 - Modificando innerHTML")
    
@@ -81,8 +80,9 @@ if (estado2["Ex2"]) {
 
 
 //Observe que como no Ex21 o <h2> foi substituído por um <p>, ele agora o irá reconhecer como o primeiro elemento a ser selecionado. Alterando assim sua tag para o JS. Observe também que não é possível alterar os elementos ocultos assim, você apenas está alterando seu texto.
-estado2["Ex3"] = false
-if (estado2["Ex3"]) {
+
+estado2["Ex23"] = false
+if (estado2["Ex23"]) {
 
    console.log("\n\tExemplo 2.2 - Modificando innerHTML")
    
@@ -119,7 +119,7 @@ Podemos navegar por esses elementos utilizando:
       último filho
 
 Manipulando Elementos
-   Existem métodos NODE para mover elementos no DOM, facilitando o usando e diminuindo o uso de programação pura.
+   Existem métodos NODE para mover elementos no DOM, diminuindo o uso de programação pura.
 
    const lista = document.querySelector("");
    const contato = document.querySelector("");
@@ -139,10 +139,10 @@ Manipulando Elementos
 Criando Novos Elementos
    Podemos criar novos elementos com o método createElement()
 */ 
-estado3 = {Ex1:false, Ex2:false, Ex3:false}
+estado3 = {Ex31:false, Ex32:false, Ex33:false}
 
-estado3["Ex1"] = true
-if (estado3["Ex1"]) {
+estado3["Ex31"] = true
+if (estado3["Ex31"]) {
 
    console.log("\n\tExemplo 3.1 - Criando Elementos")
    
@@ -156,10 +156,10 @@ if (estado3["Ex1"]) {
 
 /*
 Clonar Elementos
-   Todo elemento selecionado é único. Para criarmos um novo elemento baseado no anterior, é necessário utilizar o método cloneNode(). O true é para clocar os filhso também.*/
+   Todo elemento selecionado é único. Para criarmos um novo elemento baseado no anterior, é necessário utilizar o método cloneNode(). O true é para clonar os filhos também.*/
    
-estado3["Ex2"] = true
-if (estado3["Ex2"]) {
+estado3["Ex32"] = true
+if (estado3["Ex32"]) {
 
    console.log("\n\tExemplo 3.2 - Clonando Elementos")
 
@@ -177,7 +177,7 @@ if (estado3["Ex2"]) {
 }
 
 /*
-!Atenção, caso seja feito o código abaixo, os elementos representarão o mesmolugar na memória, caso um seja alterado o outro também será, é o mesmo caso de clonar uma lista no Python.
+!Atenção, caso seja feito o código abaixo, os elementos representarão o mesmo lugar na memória, caso um seja alterado o outro também será, é o mesmo caso de clonar uma lista no Python.
 const titulo = document.querySelector('h1');
 const titulo2 = document.querySelector('h1');
 const novoTitulo = titulo;  

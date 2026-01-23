@@ -1,6 +1,6 @@
 /*
 Introdução
-   Em HTML, os elementos não são definidos apenas por sua tag. Cada elemento pode possuir atributos que fornecem informações adicionais sobre seu comportamento, odentidade e função dentro do documento. Cada atributo carrega significado semântico funcional, e pode ser acessado, modificando ou removendo através do JS.
+   Em HTML, os elementos não são definidos apenas por sua tag. Cada elemento pode possuir atributos que fornecem informações adicionais sobre seu comportamento, identidade e função dentro do documento. Cada atributo carrega significado semântico funcional, e pode ser acessado, modificando ou removendo através do JS.
    
 Obtendo atributos com JS
    *.attributes
