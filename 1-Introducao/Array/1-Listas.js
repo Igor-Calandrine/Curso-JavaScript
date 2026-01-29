@@ -146,7 +146,7 @@ console.log(linguagens3)
 
 /*
    *lista.slice()
-      Retorna os itens da Array começando pelo início e indo até o valor de final -1, o último não conta igual ao Python.
+      Retorna os itens da Array começando pelo início e indo até o valor de final, o último não conta igual ao Python.
 */
 console.log("\n\tExemplo 11")
 console.log(linguagens)
