@@ -1,0 +1,97 @@
+.container-pai {
+   background-color: rgb(253, 250, 224);
+   width: 50%;
+   margin: auto;
+   display: grid;
+   grid-template-columns: auto auto;
+   gap: 3px;
+   justify-items: center;
+   margin-bottom: 3px;
+}
+
+.container-filho {
+   width: 200px;
+   height: 200px;
+   background-color: rgb(253, 172, 129);
+   
+}
+
+.modal-container {
+   position: fixed;
+   height: 100vh;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.507);
+   inset: 0;
+   z-index: 999;
+   display: none;
+   justify-content: center;
+   align-items: center;
+}
+
+.ativo.modal-container {
+   display: flex;
+}
+
+.form-externo {
+   background-color: beige;
+   padding: 16px;
+   border-radius: 10px;
+   position: relative;
+}
+
+form {
+   background-color: beige;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 20px;
+   padding: 32px;
+   border-radius: 8px;
+   font-size: 1.5rem;
+   border: 16px solid rgb(255, 172, 104);
+}
+
+.form-name {
+   display: grid;
+   grid-template-columns: auto auto;
+   gap: 8px;
+   align-items: center;
+}
+
+.form-name input {
+   border-radius: 8px;
+   font-size: 1.25rem;
+   border: none;
+   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.446);
+
+}
+
+.form-name input:focus {
+   border-color: aqua;
+   outline: 2px solid rgba(99, 99, 99, 0.626);
+}
+
+.botao-submit {
+   width: 100px;
+   height: 40px;
+   border-radius: 10px;
+   background-color: rgb(255, 172, 104);
+   border: none;
+   box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.203);
+   font-size: 1.2rem;
+   cursor: pointer;
+   
+}
+
+.botao-fechar {
+   font-size: 1rem;
+   padding: 8px;
+   border-radius: 50%;
+   background-color: rgb(255, 255, 255);
+   border: 4px solid rgba(255, 48, 48, 0.826);
+   color: rgb(222, 100, 0);
+   position: absolute;
+   top: -16px;
+   right: -16px;
+   cursor: pointer;
+
+}
