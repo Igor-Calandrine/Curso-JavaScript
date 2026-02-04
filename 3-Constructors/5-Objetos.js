@@ -180,3 +180,57 @@ Object.defineProperties(moto, {
 
 moto.velocidade = 200
 console.log(moto.velocidade)
+
+/*
+*Object.keys(obj)
+   Retorna uma array com as chaves de todas as propriedades diretas e enumeráveis do objeto.
+*Object.values(obj)
+   Retorna uma array com os valores do objeto.
+*Object.entries(obj)
+   Retorna uma array com array's contendo a chave e o valor.
+*Object.is()
+   Verifica se os objetos são o mesmo na memória.
+*/ 
+
+const produto = {
+   nome: "banana",
+   tipo: "fruta",
+   valor: 2.99
+}
+
+produto1 = produto
+
+console.log(Object.keys(produto))
+console.log(Object.values(produto))
+console.log(Object.entries(produto))
+console.log(Object.is(produto, produto1))
+
+/*
+*Object.freeze() 
+   Impede qualquer mudança nas propriedades.
+*Object.seal()
+   Previne a adição de novas propriedades e impede que as atuais sejam deletadas.
+*Object.preventExtensions()
+   Previne a adição de novas propriedades.
+*/ 
+
+const produto2 = {
+   nome: "maça",
+   tipo: "fruta",
+   valor: 3.99,
+}
+
+produto2.nome = "uva"
+console.log(produto2.nome)
+
+Object.freeze(produto2)
+
+produto2.nome = "pera"
+console.log(produto2.nome)
+
+/*
+*Object.prototype.toString.call(valor)
+   Retorna o tipo do objeto.
+*/ 
+
+

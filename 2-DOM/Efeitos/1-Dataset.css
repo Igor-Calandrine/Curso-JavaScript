@@ -1,0 +1,48 @@
+.container-pai {
+   width: max-content;
+   padding: 10px;
+   background-color: rgb(155, 254, 254);
+   margin: auto;
+   display: grid;
+   grid-template-columns: max-content max-content;
+   justify-content: center;
+   gap: 10px;
+}
+
+.container-filho {
+   height: 200px;
+   width: 200px;
+   background-color: rgb(98, 241, 193);
+}
+
+.ativo[data-cor="laranja"] {
+   background-color: rgb(255, 171, 107);
+   transition: 0.5s;
+}
+
+.ativo[data-rotacionar="360deg"] {
+   animation: girar 2s linear infinite;
+}
+
+@keyframes girar {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.ativo[data-entrada="esquerda"] {
+   animation: crescer 2s;
+}
+
+@keyframes crescer { 
+   from {
+      transform: translateX(-1000px);
+   }
+   to {
+      transform: translateX(0px);
+   }
+   
+}
