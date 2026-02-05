@@ -1,0 +1,48 @@
+.container-pai {
+   margin: auto;
+   width: max-content;
+   display: grid;
+   grid-template-columns: auto auto auto;
+   justify-content: center;
+   gap: 4px;
+   padding: 4px;
+   background-color: aqua;
+}
+
+
+.container-filho {
+   width: 250px;
+   height: 250px;
+   background-color: rgb(100, 69, 255);
+   position: relative;
+}
+
+.ativo[data-tooltip="tooltip"] {
+   box-sizing: content-box;
+   border-radius: 8px;
+   display: inline-block;
+   background-color: rgba(0, 0, 0, 0.297);
+   font-size: 1.5rem;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: 500;
+   padding: 8px;
+   position: absolute;
+   z-index: 500;
+   animation: anim-tooltip 0.8s linear;
+}
+
+[data-tooltip="tooltip"] {
+   display: none;
+}
+
+@keyframes anim-tooltip {
+   from {
+      background-color: rgba(0, 0, 0, 0);
+      height: 0px;
+   }
+   to {
+      background-color: rgba(0, 0, 0, 0.297);
+      height: 70px;
+   }
+}
+

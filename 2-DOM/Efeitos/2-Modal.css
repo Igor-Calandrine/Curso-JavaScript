@@ -26,7 +26,7 @@
    display: none;
    justify-content: center;
    align-items: center;
-}
+} 
 
 .ativo.modal-container {
    display: flex;
