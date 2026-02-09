@@ -1,5 +1,5 @@
 /*
-.Modal
+-Modal
    Um modal é um componente de interface que aparece sobre o conteúdo da página, exigindo uma ação do usuário antes que ele continue a interação.
    Ele geralmente escurece fundo e destaca uma caixa central com uma mensagem, formulário ou ação importante.
    Ex:

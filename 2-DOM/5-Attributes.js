@@ -1,7 +1,11 @@
 /*
-Introdução
+-Introdução
    Em HTML, os elementos não são definidos apenas por sua tag. Cada elemento pode possuir atributos que fornecem informações adicionais sobre seu comportamento, identidade e função dentro do documento. Cada atributo carrega significado semântico funcional, e pode ser acessado, modificando ou removendo através do JS.
+
+   No exemplo abaixo tempo um atributo onde o id é uma chave e "elemento2" é um valor.
    
+   *Ex id="elemento2"
+
 Obtendo atributos com JS
    *.attributes
       Retorna uma array-like com os atributos do elemento, é uma propriedade apenas de leitura.*/
@@ -10,8 +14,20 @@ console.log("\n\tExemplo 1.1 - .attributes")
 
 const ex1 = document.querySelector("img")
 console.log(ex1.attributes)
-//Podemos pegar a quantidade de atributos
+
+//Por ser uma Array-like, podemos pegar a quantidade de atributos
 console.log(ex1.attributes.length)
+
+/*
+   Após conhecermos seus atributos podemos acessá-los da mesma forma que acessamos um objeto. Iremos utilizar o exemplo acima para acessar seus valores.
+   !Lembrando que class é por classList
+*/ 
+
+console.log("\n\tExemplo 1.1 - Acessando os valores")
+
+console.log(ex1.id)
+console.log(ex1.src)
+console.log(ex1.alt)
 
 /*
    *getAttribute()

@@ -1,6 +1,6 @@
 const estado1 = {Ex1:false}
 /*
-*Introdução
+-Introdução
    O objeto retornado não é apenas um objeto comum. Ele é uma instância de uma cadeia de construtores internos do navegador, criada a partir da tag HTML.
    Sendo assim, cada elemento HTML nasce de uma árvore de protótipos muito bem definida. No exemplo abaixo é possível ver toda a cadeia de protótipos de <h1>
 */ 
@@ -16,7 +16,7 @@ estado1.Ex1 = false; if (estado1.Ex1) {
 }
 
 /*
-*Dataset
+-Dataset
    É uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap. Dentro desse objeto existe uma coleção de chave / valor, com todos os atributos do elemento html que começarem com data-
    No exemplo abaixo vamos selecionar nossos itens utllizando o atributo data-, também em seguida veremos que podemos moficá-los.
 

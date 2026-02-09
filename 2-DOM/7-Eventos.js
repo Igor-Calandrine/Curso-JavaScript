@@ -49,7 +49,7 @@ limparConsole()
 let estado = {Ex11:false, Ex12:false, Ex13:false, Ex14:false, Ex15:false}
 
 
-if (estado["Ex11"]) {
+estado.Ex11 = false; if (estado["Ex11"]) {
 
    document.addEventListener("keydown", (event) => {
       console.log("Exemplo 1.1 - keydown")
@@ -60,11 +60,11 @@ if (estado["Ex11"]) {
 }
 
 /*
-Agora iremos especificar se alguma tecla foi apertado no form para isso devemos primeiro selecionar onde o evento irá ocorrer.*/
+Agora iremos especificar se alguma tecla foi apertada no form para isso devemos primeiro selecionar onde o evento irá ocorrer.*/
 
-const inputForm = document.querySelector("form") 
-if (estado["Ex12"]) {
-
+estado.Ex12 = true; if (estado["Ex12"]) {
+   
+   const inputForm = document.querySelector("form") 
    inputForm.addEventListener("keydown", (event) => {
       console.log("Exemplo 1.2 - keydown")
       console.log(true + " || " + event.key)
@@ -74,7 +74,7 @@ if (estado["Ex12"]) {
 
 /*Agora da mesma forma iremos registrar quando se solta uma tecla, é muito importante para quem quer trabalhar como GameDev. É necessário para registrar quando um estado pode ser alterado*/ 
 
-if (estado["Ex13"]) {
+estado.Ex13 = false; if (estado["Ex13"]) {
    
    document.addEventListener("keyup", (event) => {
       console.log("Exemplo 1.3 - keyup")
@@ -85,7 +85,7 @@ if (estado["Ex13"]) {
 
 /*É possível também saber se uma tecla está sendo segurada ao ser pressionada*/ 
 
-if (estado["Ex14"]) {
+estado.Ex14 = false; if (estado["Ex14"]) {
 
    document.addEventListener("keypress", (event) => {
       console.log("Exemplo 1.4 - keypress")
@@ -95,9 +95,9 @@ if (estado["Ex14"]) {
 }
 
 /*
-Para evitar que tenha que se diferenciar um tecla quando é maiúscula ou minúscula, pode-se usar event.code, ela irá retorna a posição da tecla física. Observe que foi utilizado no inpicio desse módulo para limpar o console com a tecla C, observe também que o valor é uma String*/
+Para evitar que tenha que se diferenciar um tecla quando é maiúscula ou minúscula, pode-se usar event.code, ela irá retorna a posição da tecla física. Observe que foi utilizado no início desse módulo para limpar o console com a tecla C, observe também que o valor é uma String*/
 
-if (estado["Ex15"]) {
+estado.Ex15 = true; if (estado["Ex15"]) {
 
    document.addEventListener("keydown", (event) => {
       console.log("Exemplo 1.5 - event.code")
@@ -107,11 +107,12 @@ if (estado["Ex15"]) {
 }
 
 /*
-   *click, dblclick, mousemove
-      A interação por maouse é um dos pilares das interfaces gráficas modernas. No desenvolvimento Web, o JS permite capturar e interpretar ações do usuário por meio dos eventos de mouse, possibilitando desde simples cliques em botões até sistemas complexos de arrastar, desenhar e controlar jogos.
+   -Eventos de Mouse
+      A interação por mouse é um dos pilares das interfaces gráficas modernas. No desenvolvimento Web, o JS permite capturar e interpretar ações do usuário por meio dos eventos de mouse, possibilitando desde simples cliques em botões até sistemas complexos de arrastar, desenhar e controlar jogos.
 
       Esses eventos são representados pelo objeto #MouseEvent, que contém informações detalhadas sobres a interação.
-
+   
+   *click e dblclick
       Abaixo temos um exemplo que registra um click e outro dbclick, é bom que apenas um deles estejam ativados para o mesmo elemento para não causar conflitos lógicos.
 */ 
 let estado2 = {Ex21:false, Ex22:false, Ex23:false, Ex24:false, Ex25:false}
@@ -134,7 +135,10 @@ if (estado2["Ex22"]) {
 
 }
 
-/*Temos agora um evento que ocorre sempre que o cursor do mouse de move sobre um elemento. Temos que tomar muito cuidado com ele pois o registro de informações pode deixar sua página lenta, pois ele é registrado várias vezes por segundo.*/
+/*
+   *mousemove
+      Temos agora um evento que ocorre sempre que o cursor do mouse de move sobre um elemento. Temos que tomar muito cuidado com ele pois o registro de informações pode deixar sua página lenta, pois ele é registrado várias vezes por segundo.
+*/
 
 if (estado2.Ex23) {
 
@@ -145,7 +149,10 @@ if (estado2.Ex23) {
 
 }
 
-/*Podemos verificar se ao mover o mouse ele entrou em determinada área ou sai. */
+/*
+   *mouseenter e mouseout
+      Podemos verificar se ao mover o mouse ele entrou em determinada área ou sai. 
+*/
 const divFilhoSozinho = document.querySelector("#filhoSozinho")
 
 if (estado2["Ex24"]) {
@@ -162,11 +169,13 @@ if (estado2["Ex24"]) {
    
 }
 
-/*Observe que ser for usadao o .pai como referência teremos uma informação que o mouse saiu do elemento pai ao entrar no elemento filho. Por isso é importante conhecer o #mouseleave, que é quando o mouse sai completamente do elemento, ignorando seus filhos
+/*
+   *mouseleave
+      Observe que ser for usadao o .pai como referência teremos uma informação que o mouse saiu do elemento pai ao entrar no elemento filho. Por isso é importante conhecer o #mouseleave, que é quando o mouse sai completamente do elemento, ignorando seus filhos.
 */
 const divPai = document.querySelector(".pai")
 
-if (estado2["Ex25"]) {
+estado2.Ex25 = true; if (estado2["Ex25"]) {
 
    divPai.addEventListener("mouseout", () => {
       console.log("Exemplo 2.5 - mouseout divPai")
@@ -194,8 +203,10 @@ if (estado3["Ex31"]) {
    
 }
 
-      /*Podemos ter informações dos valores que representam a posição atual do viewport em relação ao documento, como esse é um evento do window, não se deve usar document para ter acesso as informações da barra lateral de sua página.*/
-
+/*
+   *scrollX e scrollY
+   Podemos ter informações dos valores que representam a posição atual do viewport em relação ao documento, como esse é um evento do window, não se deve usar document para ter acesso as informações da barra lateral de sua página.
+*/
 estado3.Ex32 = false
 if (estado3["Ex32"]) {
 
@@ -234,7 +245,7 @@ if (estado3["Ex34"]) {
 }
       
 /*
-event.target e event.currentTarget
+-event.target e event.currentTarget
    Agora que já vimos um pouco sober eventos é importante que saibamos diferenciar quais são esse elementos que muitas vezem pode causar confunsão por termos container que estão dentro um do outro.
    
    *event.target
@@ -273,7 +284,7 @@ if (estado4["Ex42"]) {
 }
 
 /*
-preventDefault()
+*preventDefault()
    Em aplicações Web, muitas interações so usuário possuem comportamentos padrão definidos pelo navegador. Esses comportamentos existem para garantir usabilidade, acessibilidade e consistência entre sites. No entanto, ao desenvolver interfaces interativas ou sistemas mais complexos, muitas vezes é necessário impedir esse comportamento padrão e assumir o controle total da ação.
    
    Surge então um método do objeto event usado para cancelar o comportamento padrão do navegador associado a um evento. Ele não impede o evento de existir, apenas impede a ação padrão que o navegador executaria.*/ 
@@ -300,7 +311,8 @@ if (estado5["Ex51"]) {
 this
    A palavra chave this é uma palavra especial de JavaScript, que pode fazer referência a diferentes objetos dependendo do contexto. No caso de eventos, ela fará referência ao elemento em que addEventListener foi adicionado, ele será usado para evitar de ficar reescrevendo muitas vezes o mesmo elemento.
    
-   É importante lembrar que this não funciona com Arrow function. Sem um objeto para apontar ele será o window.*/ 
+   !É importante lembrar que this não funciona com Arrow function. Sem um objeto para apontar ele será o window.
+*/ 
 
 estado5.Ex52 = false
 if (estado5["Ex52"]) {
@@ -317,8 +329,7 @@ if (estado5["Ex52"]) {
 console.log("\n\tExemplo 5.3 - this")
 const filho11 = document.querySelector("#filho12")
 
-estado5.Ex53 = false
-if (estado5["Ex53"]) {
+estado5.Ex53 = false; if (estado5["Ex53"]) {
 
    filho11.addEventListener("click", function addClass() {
       console.log("\n\tExemplo 5.3 - this com objeto")
@@ -336,8 +347,7 @@ forEach e Eventos
 console.log("\n\tExemplo 4 - forEach")
 const filhosAll = document.querySelectorAll(".pai2 .filho")
 
-estado5.Ex54 = false
-if (estado5["Ex54"]) {
+estado5.Ex54 = false; if (estado5["Ex54"]) {
    
    filhosAll.forEach((item) => {
       

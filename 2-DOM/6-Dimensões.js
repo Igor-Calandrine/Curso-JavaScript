@@ -1,5 +1,5 @@
 /*
-Height e Width de um Objeto
+-Height e Width de um Objeto
    Quando o JavaScript tenta medir um elemento, ele pode fazer isso de três maneiras diferentes, dependendo do que exatamente quer observar. É aí que entram clientHeight, offsetHeight e scrollHeight eles são três formas distintas de enxergar a mesma caixa. Abaixo temos as propriedades:
 
    *clientHeight ou clientWidth
@@ -28,7 +28,7 @@ console.log(ex1.scrollWidth + " - Largura + Padding + Scroll")
 
 
 /*
-offsetTop e offsetLeft
+-offsetTop e offsetLeft
    Quando o navegador posiciona um elemento na página, ele não o coloca no vazio. Ele sempre o coloca em relação a alguma outra coisa, normalmente o seu contêiner mais próximo que tenha posicionamento. É exatamente isso que offsetTop e offsetLeft medem: eles dizem onde uma caixa começa, dentro do espaço onde ela vive.
    
    Quando você lê section.offsetTop, o navegador está dizendo quantos pixels a parte superior da <section> está afastada do topo do seu contêiner de referência, o valor não muda quando você da scroll, pois ele representa a posição no layout, não na viewport. 
@@ -50,7 +50,7 @@ console.log(ex2.offsetTop)
 console.log(ex2.offsetLeft)
 
 /*
-getBoundingClientRect()
+-getBoundingClientRect()
    Enquanto propriedades como offsetTop e offsetLeft descrevem posições dentro da estrutura da página, getBoundingClientRect() ignora o “mapa” do documento e olha apenas para a “câmera”, isto é, "onde este elemento está exatamente agora, na tela do usuário"
 
    O navegador devolve um objeto que descreve um retângulo. Esse retângulo é a projeção do elemento na tela, depois que tudo foi aplicado: layout, CSS, transformações, zoom do navegador e posição do scroll. Ele é, literalmente, a fotografia matemática do elemento naquele frame.
@@ -75,12 +75,14 @@ console.log(ex2.getBoundingClientRect().left)
 
 /*
 
-window.innner... e window.outer...
+-window.innner... e window.outer...
    As propriedades window.innerHeight, window.innerWidth e window.outerHeight, window.outerWidth existem justamente para separar aquilo que é o espaço útil onde o seu conteúdo vive daquilo que é apenas a moldura do navegador.
 
-   window.innerHeight e window.innerWidth descrevem o tamanho real da viewport, ou seja, a área onde o HTML, o CSS e o Canvas são desenhados, se você redimensiona a janela, esses valores mudam imediatamente.
+   *window.innerHeight e window.innerWidth 
+      Descrevem o tamanho real da viewport, ou seja, a área onde o HTML, o CSS e o Canvas são desenhados, se você redimensiona a janela, esses valores mudam imediatamente.
 
-   Já window.outerHeight e window.outerWidth, eles medem a janela inteira do navegador, incluindo tudo o que não faz parte do conteúdo: bordas, barras de rolagem, barra de título, barra de endereço, abas e até as ferramentas de desenvolvedor quando estão abertas.
+   *window.outerHeight e window.outerWidth 
+      Eles medem a janela inteira do navegador, incluindo tudo o que não faz parte do conteúdo: bordas, barras de rolagem, barra de título, barra de endereço, abas e até as ferramentas de desenvolvedor quando estão abertas.
 */ 
 console.log("\n\tExemplo 4")
 
@@ -89,7 +91,7 @@ console.log(window.outerWidth)
 console.log(window.innerWidth)
 
 /*
-matchMedia()
+-matchMedia()
    Utilize um media-querie como no CSS para verificar a largura do browser
 */ 
 console.log("\n\tExemplo 5")

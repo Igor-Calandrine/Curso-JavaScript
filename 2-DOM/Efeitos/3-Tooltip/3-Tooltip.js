@@ -1,5 +1,5 @@
 /*
-.Tooltip
+-Tooltip
    É um pequeno elemento visual que aparece quando o usuário passa o mouse, foca ou toca em um compenente da interface, exibindo uma dica curta e contextual. Ele serve para explicar algo sem poluir a interface, mostrando informação sob demanda.
 
    Há diferentes formas de criar um Tooltip
@@ -15,7 +15,7 @@
       Ele será ativado com um evento, assim que o mouse entrar em determinada área. 
       Em seguida seu posicionamente por um evento em que o mouse se move, para que ele seja atualizado constantemente.
 
-      E por último, ele será desativa assim que o mouse sair da determinada área.
+      E por último, ele será desativado assim que o mouse sair da determinada área.
 
       Para otimizações é interessante desativar os eventos desnecessários assim que o mouse sai da área e depois ative novamente assim que entrar.
 */ 
