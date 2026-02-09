@@ -1,0 +1,36 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: content-box;
+}
+
+.container-pai {
+   background-color: rgb(156, 117, 255);
+   max-width: 25%;
+   margin: auto;
+   margin-top: 200px;
+   padding: 16px;
+   display: grid;
+   gap: 20px;
+   border-radius: 12px;
+   box-shadow: 1px 1px 8px 2px black;
+}
+
+.container-filho {
+   display: grid;
+   grid-template-columns: 1fr auto;
+   align-items: center;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-filho h2 {
+   justify-self: left;
+   font-size: 1.3rem;
+}
+
+.container-filho p {
+   font-size: 1.2rem;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+   color: azure;
+}
