@@ -1,0 +1,144 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+.contato {
+   background-color: rgb(242, 242, 242);
+   max-width: 40%;
+   min-width: 400px;
+   margin: 300px auto;
+   padding: 40px 20px;
+   display: grid;
+   gap: 24px;
+   border-radius: 4px;
+   box-shadow: 1px 1px 8px 1px black;
+}
+
+.campo {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: grid;
+   grid-template-columns: 60px auto;
+   gap: 20px;
+   text-align: left;
+   font-size: 1.5rem;
+   position: relative;
+}
+
+.campo input {
+   font-size: 1.25rem;
+   border: 0;
+   box-shadow: 1px 1px 2px 0px black;
+   border-radius: 4px;
+   padding: 4px 6px;
+}
+
+input:focus {
+   color: rgb(157, 157, 157);
+   outline: 1px solid rgb(157, 157, 157);
+}
+
+.textareaLabel {
+   font-size: 1.25rem;
+   min-width: 300px;
+   margin: 0;
+   position: relative;
+   top: 12px;
+}
+
+textarea {
+   display: block;
+   font-size: 1.15rem;
+}
+
+textarea:focus {
+   color: rgb(157, 157, 157);
+   outline: 1px solid rgb(157, 157, 157);
+}
+
+.detalhes {
+   background-color: rgb(242, 242, 242);
+   max-width: 10%;
+   min-width: 60px;
+   padding: 40px 32px;
+   display: grid;
+   gap: 20px;
+   align-content: center;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 1.12rem;
+   border-radius: 4px;
+   box-shadow: 1px 1px 8px 1px black;
+   position: absolute;
+   top: 300px;
+   right: 0;
+}
+
+.cor {
+   display: grid;
+   grid-template-columns: auto auto;
+   gap: 4px;
+   align-items: baseline;
+}
+
+.cor select {
+   font-size: 0.8rem;
+   margin-left: 5px;
+}
+
+.cor select:focus {
+   outline: 1px solid rgb(157, 157, 157);
+}
+
+.sexo {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   gap: 4px;
+   align-items: baseline;
+
+}
+
+.sexo p {
+   grid-column: span 2;
+}
+
+.escolaridade {
+   display: grid;
+   grid-template-columns: auto auto;
+   gap: 4px;
+   align-content: baseline;
+}
+
+.escolaridade p {
+   grid-column: span 2;
+}
+
+.escolaridade label, .sexo label {
+   font-size: 0.85rem;
+}
+
+.escolaridade input {
+   font-size: 1.1rem;
+}
+
+button {
+   display: block;
+   width: 80px;
+   height: 40px;
+   margin: auto;
+   border-radius: 8px;
+   margin-left: 5px;
+   background-color: rgb(171, 171, 171);
+}
+
+span {
+   font-size: 0.85rem;
+   color: rgba(255, 0, 0, 0.734);
+   margin-left: 10px;
+   position: absolute;
+   top: 34px;
+   display: none;
+}
+
+span.invalido {
+   display: block;
+}
+
