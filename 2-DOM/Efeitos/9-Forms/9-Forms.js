@@ -9,6 +9,7 @@
    
    Para isso, precisamos aprender como acessar formulários e seus valores pelo JS.
 */ 
+const Ex1 = 0; if(Ex1) {
 
 //*Listar formulários
 const listas = document.forms
@@ -26,6 +27,7 @@ console.log(formularioElementos)
 const formularioItem = document.forms[0].elements[4]
 console.log(formularioItem)
 
+}
 /*
 -Value
    Essa propriedade retorn o valor atual de um campo de formulário, ou seja, aquilo que o usuário digitou, selecionou ou alterou. O valor retornado é sempre uma string, mesmo que o campo seja numérico.

@@ -1,0 +1,111 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   display: grid;
+   grid-template-columns: 300px 1fr;
+}
+
+form {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+   letter-spacing: 1.125px;
+   height: 100vh;
+   background-color: rgb(234, 238, 238);
+   padding: 20px;
+   display: grid;
+   gap: 20px;
+   align-content: start;
+   border-radius: 4px;
+}
+
+select {
+   font-size: 1.125rem;
+}
+
+form h1 {
+   font-size: 1.5rem;
+}
+
+form label {
+   display: block;
+   margin-bottom: 12px;
+}
+
+input:focus label{
+   color: rgb(74, 157, 157);
+}
+
+form input {
+   display: block;
+   margin: auto auto;
+   width: 100%;
+}
+
+.elemento-lateral label{
+   display: inline-block;
+   margin-right: 12px;
+}
+
+.elemento-lateral input{
+   display: inline-block;
+   width: 100px;
+   margin-right: 12px;
+}
+
+main {
+   background-color: rgb(244, 244, 244);
+   padding: 40px;
+   text-align: center;
+   height: 100vh;
+}
+
+main h2 {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+   margin-bottom: 10px;
+}
+
+.elemento-criado {
+   background-color: rgba(255, 255, 255, 0);
+   height: 100%;
+   width: 100%;
+   padding-bottom: 10px;
+}
+
+.elemento-criado textarea {
+   text-align: justify;
+   display: block;
+   height: 100%;
+   width: 100%;
+   border: 0;
+   box-shadow: 1px 1px 5px 1px rgb(131, 131, 131);
+}
+
+.elemento-criado textarea:focus {
+   outline: 0;
+}
+
+.info {
+   color: rgb(120, 0, 0);
+   font-size: 0.75rem;
+   display: inline;
+   margin-left: 28px;
+}
+
+.config {
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 0.9rem;
+   line-height: 1.5;
+   letter-spacing: -0.7px;
+}
+
+
+
+
+
+
+
+
+

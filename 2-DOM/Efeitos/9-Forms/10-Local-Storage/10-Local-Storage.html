@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="10-Local-Storage.css">
+   <title>Document</title>
+</head>
+<body>
+
+   <form action="">
+
+   <h1>Editor CSS</h1>
+   
+   <div class="elemento-lateral">
+      <label for="font-family">Fonte</label>
+      <select class="font" data-unidade="" name="font-family" id="font-family">
+         <option class="font" value='Lucida Sans'>Lucida Sans</option>
+         <option value="Times New Roman">Times New Roman</option>
+         <option value="Courier New">Courier New</option>
+      </select>
+   </div>
+
+   <div>
+      <label for="font-size">Fonte Size <span class="info"></span></label>
+      <input class="" data-unidade="px" type="range" name="font-size" value="" min="0" max="50" id="font-size">
+   </div>
+
+   <div class="elemento-lateral">
+      <label for="color">Cor da Fonte</label>
+      <input class="color" data-unidade="" type="color" name="color" value="#000000" id="color">
+   </div>
+
+   <div class="elemento-lateral">
+      <label for="back-ground">Back Ground</label>
+      <input class="color" data-unidade="" type="color" name="back-ground" value="#ffffff" id="background">
+   </div>
+
+   <div>
+      <label for="largura">Largura</label>
+      <input class="" data-unidade="%" type="range" name="width" value="100" min="0" max="100" id="width">
+   </div>
+
+   <div>
+      <label for="altura">Altura</label>
+      <input class="" data-unidade="%" type="range" name="height" value="" min="0" max="100" id="height">
+   </div>
+
+   <div>
+      <label for="border-radius">Border Radius</label>
+      <input class="" data-unidade="px" type="range" name="border-radius" value="" min="0" max="500" id="border-radius">
+   </div>
+
+   <div class="elemento-lateral">
+      <label for="circulo">Círculo</label>
+      <input class="%" type="checkbox" name="circulo" value="" id="circulo">
+   </div>
+
+   <div>
+      <pre class="config"></pre>
+   </div>
+
+   </form>
+
+   <main>
+      <h2>Elemento Criado</h2>
+      <div class="elemento-criado">
+         <textarea name="textarea" value="" id="textarea" >
+
+         </textarea>
+      </div>
+   </main>
+
+
+   <script src="10-Local-Storage2.js"></script>
+</body>
+</html>
