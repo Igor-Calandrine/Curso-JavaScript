@@ -1,35 +1,54 @@
-const form = document.querySelector("form")
-const divTextArea = document.querySelector(".elemento-criado")
-const textArea = document.querySelector("#textarea")
-const fontFamily = document.querySelector("#font-family")
-const fontSize = document.querySelector("#font-size")
-const spanSize = document.querySelector("[for='font-size'] span")
-const color = document.querySelector("#color")
-const background = document.querySelector("#back-ground")
-const largura = document.querySelector("#largura")
-const altura = document.querySelector("#altura")
-const borderRadius = document.querySelector("#border-radius")
+/*
+-Local Storage
+   É uma API do navegador que permite armazenardados no navegador do usuário de forma persistente, ou seja, os dados continuam salvos mesmo após fechar a aba ou o navegador
+   Ela faz parte da Web Storage API, juntamente com o #sessionStorage.
 
-const circulo = document.querySelector("#circulo")
+   Os dados ficam armazenados no navegador do usuário, associados ao domínio do site, ou seja, cada domínio possui o seu próprio espaço isolado.
 
-form.addEventListener("input", (event) => {
-   // console.log(circulo.value)
-   console.log(event.target.name)
-   textArea.style.fontFamily = fontFamily.value
+*  Ex:   meusite.com    - tem seu próprio Local Storage
+*        outrosite.com  - não consegue acessar os dados de meusite.com
 
-   textArea.style.fontSize = fontSize.value + "px"
-   spanSize.textContent = fontSize.value + "px"
+   Há algumas características importantes que um desenvolvedor deve saber antes de escrever suas linhas de código para um Local Storage
 
-   textArea.style.color = color.value
-   textArea.style.background = background.value
+   *Armazena dados no formato - chave:valor
+   *Só aceita Strings
+   *Não expira automaticamente
+   *Armazena cerca de 5MB a 10MB, depende do navegador
+   *É sincrono, pode impactar a performance
 
-   textArea.style.width = largura.value + "%"
-   textArea.style.height = altura.value + "%"
-   textArea.style.borderRadius = borderRadius.value + "%"
-
-   if (circulo.checked) {
-      textArea.style.borderRadius = "50%"
-   }
+-localStorage
+   É acessado pelo objeto global #localStorage
    
+   *localStorage.setItem("chave", "valor")
+      Para salvar os dados pose-se utilizar o método tradicional de objeto, mas é uma boa prática utilizar o método acima
 
+   *localStorage.getItem("chave")
+      Busca o valor da chave
+   
+   *localStorage.removeItem("chave")
+      Remove o item
+
+   *localStorage.clear()
+      Limpa todos os itens
+
+   Pode-se pegar o par chave:valor pelo índice
+      localStorage.key(0)
+
+   ?A dica é criar um dicionário antes para verificar se as informações estão entrando corretamente e depois adicionar a função de Local Storage.
+   ?Exemplo realizado próximo arquivo.
+
+   Para pegar os dados é necessário criar um event de 'DOMContentLoaded' para que os dados sejam puxados do Local Storage e suas "chave:valor" sejam usados corretamente, como foi feito no exemplo abaixo:
+
+   document.addEventListener("DOMContentLoaded", () => {
+   *Acima temos o evento criado para pegar os dados
+      if (localStorage) {
+      
+      for (i=0; i <= (localStorage.length -1); i++) {
+
+         textArea.style[localStorage.key(i)] = localStorage.getItem(localStorage.key(i))
+         *Acima a cada chave:valor será utilizada para definir o estilo 
+      }
+   }
 })
+
+*/ 
