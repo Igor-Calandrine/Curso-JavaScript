@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 form.addEventListener("input", (event) => {
    const target = event.target
-
    textArea.style[target.name] = target.value + target.dataset.unidade
    localStorage.setItem(target.name, target.value + target.dataset.unidade)
 
