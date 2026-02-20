@@ -4,7 +4,7 @@
 
    O objeto #response representa a resposta HTTP completa, ele não contém diretamente o conteúdo do arquivo, mas sim informações sobre a requisição e métodos para extrair os dados.
 
-   Assim então temos métodos para acessar o corpor da resposta:
+   Assim então temos métodos para acessar o corpo da resposta:
 
    *response.text()      → Retorna o conteúdo como texto
    *response.json()      → Converte o obejto para JSON
@@ -123,7 +123,7 @@ fetch('./Exemplo.json')
 /*
    Para que esse erro não ocorra criaremos um clone
 */ 
-const Ex6 = 1; if(Ex6) {
+const Ex6 = 0; if(Ex6) {
 
 fetch('./Exemplo.json')
    .then(resposta1 => {
@@ -135,6 +135,68 @@ fetch('./Exemplo.json')
       console.log("TEXT:\n", text)
    })
    
-
-
 }
+
+/*
+-Headers
+   A propriedade headers pertence ao objeto Response, retornnado pelo fetch(). Ela representa os cabeçalhos da resposta HTTP enviados pelo servidor. Esses cabeçalhos trazem metadados importantes sobre a resposta, como:
+
+      *Tipo de conteúdo (Content-Type)
+      *Tamanho da resposta (Content-Length)
+      *Controle de cache (Cache-Control)
+      *Data da resposta (Date)
+      *Informações sobre o servidor (Server)
+
+   Ele é um objeto iterável, o que significa que podemos percorrer sues valores com:
+
+      *forEach()
+      *for...of
+      *entries()
+      *keys()
+      *values()
+*/ 
+const Ex7 = 0; if(Ex7) {
+
+fetch('https://viacep.com.br/ws/01001000/json/')
+   .then(resposta => {
+      console.log(resposta)
+      resposta.headers.forEach((valor, chave) => {
+         console.log(chave + ': ' + valor)
+      })
+   })
+}
+
+/*
+-.status e .ok
+   Quando utilizamos fetch(), o objeto Response retornado contém informações importantes sobre o resultado da requisição HTTP.
+   Duas propriedades fundamentais são:
+      
+      *response.status  → retorna o código numérico HTTP (200, 404, 500, etc.)
+      *response.ok      → retorna um booleano indicando se a requisição foi bem-sucedida
+*/ 
+
+const Ex8 = 1; if(Ex8) {
+fetch('https://viacep.com.br/ws/01001000/json/')
+   .then(resposta => {
+      console.log(resposta.status, resposta.ok)
+      
+      if(resposta.status === 404) {
+         console.log('Página não encontrada')
+  }
+   })
+}
+
+/*
+-.url e .type
+   A propriedade type indica o tipo de resposta, que está diretamente ligado à política de segurança do navegador (CORS).
+   Ela informa como o navegador está tratando aquela resposta.
+
+      *basic	→  Requisição feita para a mesma origem
+      *cors	   →  Requisição para outra origem com CORS permitido
+      *opaque	→  Requisição feita com mode: "no-cors"
+      *error	→  Erro de rede
+*/ 
+fetch('https://viacep.com.br/ws/01001000/json/')
+   .then(response => {
+  console.log(response.type, response.url)
+   })

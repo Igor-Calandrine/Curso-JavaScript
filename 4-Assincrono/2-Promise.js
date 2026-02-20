@@ -150,7 +150,7 @@ promessa.then((valor1) => {
 
    !Imporante - A ordem do array de resposta respeita a ordem do array original — não importa qual Promise terminou primeiro.
 */ 
-const Ex5 = 0; if(Ex5) {
+const Ex5 = 1; if(Ex5) {
 
 const login = new Promise((resolve, reject) => {
    const condicao1 = true
