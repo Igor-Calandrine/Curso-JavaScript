@@ -10,9 +10,10 @@
 const form = document.querySelector(".endereco")
 const CEP = document.querySelector("#cep")
 const botao = document.querySelector("button")
+const confirmar = document.querySelector(".confirmacao")
 
 async function cep() {
-   try { 
+   try {
       const resposta = await fetch(`https://viacep.com.br/ws/${CEP.value}/json/`)  
       const respostaJSON = await resposta.json()
       const objetoJSON = Object.entries(respostaJSON)
@@ -34,9 +35,17 @@ async function cep() {
       const inputs = document.querySelectorAll(".endereco input")
       inputs.forEach((item) => {
             const checkRequired = item.checkValidity()
-            if (!checkRequired) 
+            if (!checkRequired) {
                item.previousElementSibling.style.color = "red"
+            }
+            else {
+               item.previousElementSibling.style.color = "black"
+            }
          })
+   }
+   if (form.checkValidity()) {
+      confirmar.classList.add("ativo")
+      botao.setAttribute("type", "submit")
    }
 }
 
@@ -44,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
    if (localStorage) {
       for(let i=0; i <= localStorage.length -1; i++) {
          form[localStorage.key(i)].value = localStorage.getItem(localStorage.key(i))
-         console.log(form[localStorage.key(i)])
       }
    }
 })
@@ -52,8 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
 botao.addEventListener("click", cep) 
 form.addEventListener("input", (event) => {
    localStorage.setItem(event.target.name, event.target.value)
-   console.log(localStorage)
 })
+
+
 
 
 

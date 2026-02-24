@@ -58,6 +58,7 @@ button {
    justify-self: start;
    position: relative;
    top: 10px;
+   cursor: pointer;;
 }
 
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
@@ -76,6 +77,19 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
    display: none;
    animation: aparecer 1s;
    z-index: -1;
+}
+
+.confirmacao {
+   display: none;
+   font-size:1rem;
+   color: red;
+   justify-self: left;
+   position: relative;
+   top: 10px;
+}
+
+.confirmacao.ativo {
+   display: inline;
 }
 
 @keyframes aparecer {
