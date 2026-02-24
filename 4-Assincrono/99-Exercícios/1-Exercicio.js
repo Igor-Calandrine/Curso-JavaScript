@@ -20,6 +20,7 @@ cep.addEventListener("input", (event) => {
    .then(resposta => resposta.json())
 
    .then(json => {
+      console.log(json)
       formulario["logradouro"].value = json["logradouro"]
       formulario["bairro"].value = json["bairro"]
       formulario["localidade"].value = json["localidade"]

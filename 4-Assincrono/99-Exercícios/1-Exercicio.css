@@ -52,6 +52,14 @@ input:focus {
    
 }
 
+button {
+   padding: 8px 12px;
+   border-radius: 4px;
+   justify-self: start;
+   position: relative;
+   top: 10px;
+}
+
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
    -webkit-appearance: none;
 }

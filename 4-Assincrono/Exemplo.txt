@@ -1,1 +1,7 @@
-Exemplo gerado
+{
+  "cep": "01001-000",
+  "logradouro": "Augusto Montenegro",
+  "bairro": "Marambaia",
+  "localidade": "Belém",
+  "uf": "PA"
+}
