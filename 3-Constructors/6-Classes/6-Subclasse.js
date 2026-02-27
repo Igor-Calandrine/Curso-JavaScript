@@ -20,10 +20,10 @@ class Veiculo {
 
 class Moto extends Veiculo {
    //É possível herdar as informações da classe pai com super
-   // constructor(marca, rodas, combustivel, capacete) {
-   //    super(marca, rodas, combustivel) 
-   //    this.capacete = capacete
-   // }
+   constructor(marca, rodas, combustivel, capacete) {
+      super(marca, rodas, combustivel) 
+      this.capacete = capacete
+   }
 
    //É possível reescrever um método anterior, basta ter o mesmo nome
    informaçoes () {

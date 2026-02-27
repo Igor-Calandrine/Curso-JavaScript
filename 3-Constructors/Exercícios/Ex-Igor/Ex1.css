@@ -1,0 +1,53 @@
+@charset "UTF-8";
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.preço {
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 1.5rem;
+   line-height: 1.3;
+   color: rgb(45, 45, 45);
+   max-width: 400px;
+   margin: 40px auto;
+   background-color: rgb(255, 230, 212);
+   padding: 16px;
+   border-radius: 8px;
+   border: 4px solid rgb(142, 12, 0);
+}
+
+.preço span {
+   display: inline-block;
+   margin-left: 20px;
+   font-size: 1.225rem;
+   color: rgb(60, 4, 0);
+}
+
+.promocao {
+   display: none;
+}
+
+.promocao.ativo {
+   display: inherit;
+}
+
+
+.tempo-promocional {
+   margin-top: 12px;
+   color: red;
+   font-size: 1.75rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.tempo-promocional span {
+   display: block;
+}
+
+.tempo-faltante {
+   font-size: 2rem;
+   color: rgb(192, 0, 0);
+   justify-self: center;
+   align-self: center;
+}
