@@ -6,53 +6,37 @@
    *Constagem de tempo até uma determinada data
    *Utilize class e métodos
 */ 
+import ContagemRegressiva from "./Contagem-Tempo/Plugin-Contagem.js";
+
 const dataHoje = document.querySelector(".data-hoje span")
-const precoHoje = document.querySelector("[data-preco] span")
-const promocaoHoje = document.querySelector("[data-promocao] span")
-const precoPromo = document.querySelector("[data-precoP] span")
+const precoHoje = document.querySelector(".preco span")
+const precoPromo = document.querySelector(".preco-promo span")
+const promocaoHoje = document.querySelector(".promocao-valor span")
+const dataFuturo = document.querySelector(".data-futuro span")
+const diaFaltante = document.querySelector(".dia-faltante")
+const horaFaltante = document.querySelector(".hora-faltante")
 
-const hoje = new Date()
-const preco = 200
+const hoje = new Date().toLocaleDateString("pt-BR")
+
+const preco = 100
 const promocao = 50
-const precoP = preco * (promocao/100)
+const precoFinal = preco * promocao/100
 
-dataHoje.textContent = hoje.toLocaleDateString("pt-BR")
-precoHoje.textContent = "R$ " + preco.toFixed(2, 0).replace(".", ",")
+dataHoje.textContent = hoje
+precoHoje.textContent = ("R$" + preco.toFixed(2, 0)).replace(".", ",")
+promocaoHoje.textContent = promocao + "%"
+precoPromo.textContent = ("R$" + precoFinal.toFixed(2, 0)).replace(".", ",")
 
-if (promocao) {
-   const divPromocao = document.querySelector("[data-promocao]")
-   divPromocao.classList.add("ativo")
+setInterval(() => {
 
-   const tempoFaltante = document.querySelector(".tempo-faltante")
-   precoPromo.textContent = "R$ " +  precoP.toFixed(2, 0).replace(".", ",")
-   
-   setInterval(() => {
-      const hoje = new Date()
-      const futuro = new Date(2026, 1, 28)
-      
-      const dataFuturo = document.querySelector("[data-futuro] span")
-      dataFuturo.textContent = futuro.toLocaleDateString("pt-BR")
+   const tempoRestante = new ContagemRegressiva("2026-2-28")
+   const tempo = tempoRestante.informeTempo()
 
-      promocaoHoje.textContent = promocao + "%"
+   dataFuturo.textContent = tempoRestante.dataFutura.toLocaleDateString("pt-BR")
+   diaFaltante.textContent = `${tempo.dias} dias`
+   horaFaltante.textContent = `${tempo.horas}:${String(tempo.minutos).padStart(2, "0")}:${String(tempo.segundos).padStart(2, "0")}`
 
-      const tempoRestante = futuro.getTime() - hoje.getTime()
-
-      const diaRestante = Math.floor(tempoRestante/(1000 * 60 * 60 * 24))
-      const horaRestante = Math.floor(tempoRestante/(1000 * 60 * 60))
-      const minutosRestante = Math.floor((tempoRestante/(1000 * 60 * 60) - Math.floor(tempoRestante/(1000 * 60 * 60))) * 60)
-      const segundosRestante = Math.floor((tempoRestante/(1000 * 60) - Math.floor(tempoRestante/(1000 * 60))) * 60)
-
-      tempoFaltante.textContent = `${horaRestante}:${minutosRestante}:${segundosRestante}`
-
-   }, 1000)
-
-   
-   
-   
-
-}
-
-
+},1000)
 
 
 

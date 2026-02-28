@@ -1,3 +1,8 @@
+/*
+Plugin para fazer contagem regressiva de:
+   Dias, horas, minutos e segundos, do dia de hoje até determinado dia.
+   Insira data no formato ("Ano-mês-dia")
+*/ 
 export default class ContagemRegressiva {
    constructor (dataFutura) {
       this.dataFutura = new Date(dataFutura)
@@ -13,50 +18,59 @@ export default class ContagemRegressiva {
       return intervalo
    }
    
-   diasRestante() {
+   dia() {
       const dias = Math.floor(this.intervalo() / (1000 * 60 * 60 * 24))
       return dias
    }
 
-   horasRestante () {
+   hora () {
       const horas = Math.floor(this.intervalo() / (1000 * 60 * 60) % 24)
       return horas
    }
 
-   minutosRestante () {
+   minuto () {
       const minutos = Math.floor(this.intervalo() / (1000 * 60) % 60)
       return minutos
    }
 
-   segundosRestante () {
+   segundo () {
       const segundos = Math.floor(this.intervalo() / (1000) % 60)
       return segundos
    }
 
    informeRestante () {
-      const frase = `${this.diasRestante()} Dias ${this.horasRestante()}:${this.minutosRestante()}:${this.segundosRestante()}`
+      const frase = `${this.dia()} Dias ${this.hora()}:${this.minuto()}:${this.segundo()}`
       return frase
    }
 
-   informeRestanteTempo () {
-      if(this.intervalo() >= 0){
+   tempoAtualizar () {
+      if (this.intervalo() >= 0) {
+
          setInterval(() => {
-            console.log(this.informeRestante())
+            const tempo = this.informeTempo()
+            console.log(tempo)
          },1000)}
+         
       else {
          return "0D 00:00:00"
       }
    }
+
+   informeTempo () {
+      return {
+               dias: this.dia(),
+               horas: this.hora(),
+               minutos: this.minuto(),
+               segundos: this.segundo()
+            }
+   }
+
 }
 
-const promocao = new ContagemRegressiva("2026-2-28")
+// const promocao = new ContagemRegressiva("2026-2-28")
 
-console.log(promocao.dataFutura)
-console.log(promocao.hoje)
-console.log(promocao.intervalo())
-console.log(promocao.diasRestante())
-console.log(promocao.horasRestante())
-console.log(promocao.minutosRestante())
-console.log(promocao.segundosRestante())
-console.log(promocao.informeRestanteTempo())
+
+
+
+
 
