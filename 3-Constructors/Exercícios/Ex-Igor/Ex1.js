@@ -6,7 +6,7 @@
    *Constagem de tempo até uma determinada data
    *Utilize class e métodos
 */ 
-import ContagemRegressiva from "./Contagem-Tempo/Plugin-Contagem.js";
+import ContagemRegressiva from "/Contagem-Tempo/Plugin-Contagem.js";
 
 const dataHoje = document.querySelector(".data-hoje span")
 const precoHoje = document.querySelector(".preco span")
