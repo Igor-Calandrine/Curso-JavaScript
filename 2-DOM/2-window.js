@@ -37,13 +37,13 @@ console.log(innerWidth)
 Controle da janela e do navegador
     O #window permite que o JS saiba informações sobre o tamanho da área visível da página, a posição so scroll e até mesmo que mova esse scroll programaticamente. Ele também fornece acessó a URL atual por meio do objeto #location, permitindo ler o endereço da página ou redirecionar o usuário para outro site.
 
-    UM dos papéis mais importantes do #window é o controle do tempo. Funções como #serTimeout e #setInterval permitem que o código seja executado após um determinado período ou repetidamente em intervalos regulares. Isso é essencial para animações, jogos, atualizações e qualquer comportamento que dependa do tempo.
+    Um dos papéis mais importantes do #window é o controle do tempo. Funções como #serTimeout e #setInterval permitem que o código seja executado após um determinado período ou repetidamente em intervalos regulares. Isso é essencial para animações, jogos, atualizações e qualquer comportamento que dependa do tempo.
 
-    No escopo global, a palavra-chave #this aponta para o #window. Isso significa que, fora de funções ou classes, o contexto atual é a própria janela do navegador. Esse detalher é importante para entender por que certos comportamentos mudam quando o código é executado dentro de funções, métodos ou módulos.
+    No escopo global, a palavra-chave #this aponta para o #window. Isso significa que, fora de funções ou classes, o contexto atual é a própria janela do navegador. Esse detalhe é importante para entender por que certos comportamentos mudam quando o código é executado dentro de funções, métodos ou módulos.
 
 
 document
-    Dentro do #window existe um objeto fundamental chamado #document. Ele representa o DOM, ou seja, a estrutura HTML. Sempre que o JS acessa um elemento da página, modifica um texto ou reage a um clique, ele estra trabalhando com o #document, que por sua vez está constido dentro do #window.
+    Dentro do #window existe um objeto fundamental chamado #document. Ele representa o DOM, ou seja, a estrutura HTML. Sempre que o JS acessa um elemento da página, modifica um texto ou reage a um clique, ele estra trabalhando com o #document, que por sua vez está contido dentro do #window.
     
     Essa relação deixa claro que o #window não é apenas a página, mas o ambiente completo que envolve o página. Enquanto o #document cuida do conteúdo, o #window cuida do contexto onde esse conteúdo vive.
     

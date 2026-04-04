@@ -10,7 +10,7 @@
 
    *scrollHeight ou scrollWidth
       height total, mesmo dentro de scroll escondido
-*/ 
+*/
 
 console.log("\tExemplo 1.1")
 
@@ -26,7 +26,6 @@ console.log("\n\tExemplo 1.3")
 console.log(ex1.scrollHeight + " - Altura + Padding + Scroll")
 console.log(ex1.scrollWidth + " - Largura + Padding + Scroll")
 
-
 /*
 -offsetTop e offsetLeft
    Quando o navegador posiciona um elemento na página, ele não o coloca no vazio. Ele sempre o coloca em relação a alguma outra coisa, normalmente o seu contêiner mais próximo que tenha posicionamento. É exatamente isso que offsetTop e offsetLeft medem: eles dizem onde uma caixa começa, dentro do espaço onde ela vive.
@@ -35,7 +34,7 @@ console.log(ex1.scrollWidth + " - Largura + Padding + Scroll")
    Se nenhum pai tiver posicionamento (position:absolute e position:relative), o navegador usa o body como referência.
 
    São úteis para detectar onde um elemento está dentro de um layout, para mover objetos em jogos feitos em canvas ou DOM, para criar animações, sistemas de colisão ou para saber quando algo chegou perto de outro elemento. Eles transformam a página, que parece apenas visual, em um verdadeiro plano cartesiano invisível, onde cada caixa tem coordenadas e pode ser rastreada, medida e movimentada com precisão.
-   */ 
+*/
 
 console.log("\n\tExemplo 2.1 - offsetTop offsetLeft")
 
@@ -62,8 +61,7 @@ console.log(ex2.offsetLeft)
    Há também uma sutileza importante: os valores retornados não são necessariamente inteiros. Eles podem ser números decimais, porque o navegador trabalha com subpixels, zoom, DPI e transformações. Isso faz com que o getBoundingClientRect() seja muito mais preciso do que propriedades baseadas em layout.
 
    ?Daqui também vem o rect da criação de jogos, por isso é bem importante lembrar o seu significado
-*/ 
-
+*/
 console.log("\n\tExemplo 3 - Rect .ex1")
 console.log(ex1.getBoundingClientRect())
 
@@ -72,7 +70,6 @@ console.log(ex2.getBoundingClientRect().top)
 console.log(ex2.getBoundingClientRect().right)
 console.log(ex2.getBoundingClientRect().bottom)
 console.log(ex2.getBoundingClientRect().left)
-
 /*
 
 -window.innner... e window.outer...
@@ -83,7 +80,7 @@ console.log(ex2.getBoundingClientRect().left)
 
    *window.outerHeight e window.outerWidth 
       Eles medem a janela inteira do navegador, incluindo tudo o que não faz parte do conteúdo: bordas, barras de rolagem, barra de título, barra de endereço, abas e até as ferramentas de desenvolvedor quando estão abertas.
-*/ 
+*/
 console.log("\n\tExemplo 4")
 
 // Altere o tamanho da janela com DevTool para fazer comparações
@@ -93,13 +90,13 @@ console.log(window.innerWidth)
 /*
 -matchMedia()
    Utilize um media-querie como no CSS para verificar a largura do browser
-*/ 
+*/
 console.log("\n\tExemplo 5")
 
-const janela = window.matchMedia('(max-width: 600px)')
+const janela = window.matchMedia("(max-width: 600px)")
 
-if(janela.matches) {
-  console.log('Tela menor que 600px')
+if (janela.matches) {
+	console.log("Tela menor que 600px")
 } else {
-  console.log('Tela maior que 600px')
+	console.log("Tela maior que 600px")
 }

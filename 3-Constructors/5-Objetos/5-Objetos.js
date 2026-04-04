@@ -38,7 +38,7 @@ Métodos de Object
 
 console.log("\n\tExemplo 1")
 
-const carro ={
+const carro = {
    rodas: 4,
    init(marca) {
       this.marca = marca

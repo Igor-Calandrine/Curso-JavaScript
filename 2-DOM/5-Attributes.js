@@ -3,7 +3,6 @@
    Em HTML, os elementos não são definidos apenas por sua tag. Cada elemento pode possuir atributos que fornecem informações adicionais sobre seu comportamento, identidade e função dentro do documento. Cada atributo carrega significado semântico funcional, e pode ser acessado, modificando ou removendo através do JS.
 
    No exemplo abaixo tempo um atributo onde o id é uma chave e "elemento2" é um valor.
-   
    *Ex id="elemento2"
 
 Obtendo atributos com JS
@@ -47,7 +46,7 @@ console.log(ex1.getAttribute("id"))
 console.log("\n\tExemplo 1.3 - setAttribute() - Substituindo")
 
 console.log(ex1.getAttribute("alt"))
-ex1.setAttribute("alt", "imagem do ex1 - sbustituído")
+ex1.setAttribute("alt", "imagem do ex1 - substituído")
 console.log(ex1.getAttribute("alt"))
 
 //criando
@@ -62,7 +61,7 @@ console.log(ex1.getAttribute("value"))
    *removeAttribute()
       Remove completamente um atributo do elemento
 */
-console.log("\n\tExemplo 1.4 - setAttribute() - Substituindo")
+console.log("\n\tExemplo 1.4 - removeAttribute()")
 
 console.log(ex1.attributes.length)
 ex1.removeAttribute("value")
@@ -88,7 +87,7 @@ const ex2 = document.querySelector("div")
 console.log(ex2.hasAttributes())
 
 /*
-Substituição de propriedade de um objeto de maneira clássica
+-Substituição de propriedade de um objeto de maneira clássica
    Lembre-se que podemos modificar o valor de uma propriedade, mas devemos evitar de utilizar. É bom ver o exemplo abaixo para relembrar e entender de onde vem os métodos que utilizamos.
    *Ex: objeto.propriedade = ''
 */ 
