@@ -18,23 +18,24 @@
    Após realizar a contagem insira no texto o novo valor.
    Você pode deixar o intervalo aleatório também para deixar menos robótico com Match.random
    !Não se esqueça de parar a contagem após chegar no número máximo, ela irá continuar mesmo que não apareça no texto, podendo até travar o browser.
-*/ 
+*/
 
 const numeros = document.querySelectorAll("[data-numero]")
 
 numeros.forEach((item) => {
-   let numeroMin = 0
-   const numeroMax = parseInt(item.textContent)
-   const numeroIncremento = numeroMax/100
-   
-   let contagem = window.setInterval(() => {
-      numeroMin = numeroMin + numeroIncremento
-      item.textContent = Math.round(numeroMin)
+	let numeroMin = 0
+	//Número salvo na constante abaixo #parserInt para transformar para o tipo Number
+	const numeroMax = parseInt(item.textContent)
+	//Quantidade de números que serão incrementados
+	const numeroIncremento = numeroMax / 100
 
-   if (numeroMin >= numeroMax) {
-         item.textContent = numeroMax
-         window.clearTimeout(contagem)
-      }   
-   }, 50 * Math.random())
+	let contagem = window.setInterval(() => {
+		numeroMin = numeroMin + numeroIncremento
+		item.textContent = Math.round(numeroMin)
 
+		if (numeroMin >= numeroMax) {
+			item.textContent = numeroMax
+			window.clearTimeout(contagem)
+		}
+	}, 50 * Math.random())
 })
