@@ -1,0 +1,21 @@
+.container {
+   width: 200px;
+   height: 200px;
+   margin-bottom: 10px;
+}
+
+#c1 {
+   background-color: rgb(90, 58, 80);
+}
+
+#c2 {
+   background-color: rgb(255, 165, 0);
+}
+
+#c3 {
+   background-color: rgb(95, 158, 160);
+}
+
+#c4 {
+   background-color: burlywood;
+}

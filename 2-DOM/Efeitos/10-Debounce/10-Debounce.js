@@ -39,20 +39,19 @@ container1.addEventListener("mouseout", (event) => {
 
 /*
 -Com Debounce
-   No exemplo abaixo o Debounce estará ativo para que o evento não dispare muitas vezes
+	No exemplo abaixo tempo um evento que é disparado várias vezes, mas a sua resposta irá demorar 1 segundo para chegar.
 */
 
-//No exemplo abaixo tempo um evento que é disparado várias vezes, mas a sua resposta irá demorar 1 segundo para chegar.
 function Debounce1() {
-	const container2 = document.querySelector("#c2")
+	const container = document.querySelector("#c2")
 	let tempo = 1000
 	let contador = 0
 
-	container2.addEventListener("mousemove", (event) => {
+	container.addEventListener("mousemove", (event) => {
 		tempo = setTimeout(() => {
 			console.log("Exemplo 2 - Evento com Debounce")
 			contador += 1
-			container2.style.backgroundColor = `rgb(${255 + contador}, 165, ${0 + contador})`
+			container.style.backgroundColor = `rgb(${255 + contador}, 165, ${0 + contador})`
 		}, 1000)
 	})
 
@@ -60,7 +59,6 @@ function Debounce1() {
 	container2.style.backgroundColor = `rgb(255, 165, 0)`
 	contador = 0
 	})
-
 
 }
 
