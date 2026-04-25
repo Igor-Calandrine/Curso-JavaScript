@@ -16,7 +16,7 @@
          Sim -> Ignora evento
          Não -> Executa função, Ativa bloqueio, Inicia timer de desbloqueio
       
-   Timer terminou?
+   No fundo: Timer terminou?
       Sim -> Remove bloqueio
 
 -Sem Throttle
@@ -40,5 +40,56 @@ container.addEventListener("mouseout", (event) => {
 
 /*
 -Com Throttle
+   Agora o evento irá apenas disparar depois de um determinado tempo
 
 */ 
+
+function Throttle () {
+   const container = document.querySelector("#c2")
+   let contador = 0
+   let esperando = false
+
+   container.addEventListener("mousemove", () => {
+
+      if (!esperando) {
+         console.log("Exemplo 1 - Throttle")
+         container.style.backgroundColor = `rgb(${255 + contador}, 165, ${0 + contador})`
+         contador += 10
+         esperando = true
+
+         setTimeout(() => {
+            esperando = false
+         }, 100)
+
+      }
+   })
+
+   container.addEventListener("mouseout", (event) => {
+	container.style.backgroundColor = `rgb(255, 165, 0)`
+	contador = 0
+   })
+}
+
+/*
+-Throttle Genérico
+   Abaixo temos um genérico para usar em eventos DOM
+*/ 
+
+function Throttle1 (seletor, evento, delay) {
+   const item = document.querySelector(seletor)
+   let esperando = false 
+
+   item.addEventListener(evento, () => {
+      
+      if (!esperando) {
+         console.log("Evento com Throttle")
+         esperando = true
+         setTimeout(() => {
+            esperando = false
+         }, delay)
+      }
+   })
+}
+
+Throttle()
+Throttle1("#c3", "mousemove", 200)
