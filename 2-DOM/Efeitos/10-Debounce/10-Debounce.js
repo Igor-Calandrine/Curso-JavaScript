@@ -23,10 +23,18 @@
    *requisições excessivas à API, lentidão, travamentos, má performance
 */
 
-const container1 = document.querySelector(".container1")
+const container1 = document.querySelector("#c1")
+let contador = 0
 
 container1.addEventListener("mousemove", (event) => {
 	console.log("Exemplo 1 - Evento sem Debounce")
+	contador += 1
+	container1.style.backgroundColor = `rgb(${95 +contador}, 58, ${130 + contador})`
+
+container1.addEventListener("mouseout", (event) => {
+	container1.style.backgroundColor = `rgb(${95}, 58, ${130})`
+	contador = 0
+})
 })
 
 /*
@@ -36,14 +44,24 @@ container1.addEventListener("mousemove", (event) => {
 
 //No exemplo abaixo tempo um evento que é disparado várias vezes, mas a sua resposta irá demorar 1 segundo para chegar.
 function Debounce1() {
-	const container2 = document.querySelector(".container2")
+	const container2 = document.querySelector("#c2")
 	let tempo = 1000
+	let contador = 0
 
 	container2.addEventListener("mousemove", (event) => {
 		tempo = setTimeout(() => {
-			console.log("Exemplo 1 - Evento com Debounce")
+			console.log("Exemplo 2 - Evento com Debounce")
+			contador += 1
+			container2.style.backgroundColor = `rgb(${255 + contador}, 165, ${0 + contador})`
 		}, 1000)
 	})
+
+	container2.addEventListener("mouseout", (event) => {
+	container2.style.backgroundColor = `rgb(255, 165, 0)`
+	contador = 0
+	})
+
+
 }
 
 /*
@@ -52,17 +70,47 @@ No exemplo abaixo iremos acrescentar um comando para que o timer seja cancelado 
 !Se você usar debounce em scroll para animar elementos entrando na tela, enquanto a pessoa continuar rolando sem parar, a função debounced pode nunca executar, então o título só animaria quando o scroll parar, o que muitas vezes não é a UX desejada.
 */
 function Debounce2() {
-	const container2 = document.querySelector(".container2")
+	const container = document.querySelector("#c3")
 	let tempo = null
+		let contador = 0
 
-	container2.addEventListener("mousemove", (event) => {
+	container.addEventListener("mousemove", (event) => {
 		clearTimeout(tempo)
 
 		tempo = setTimeout(() => {
-			console.log("Exemplo 1 - Evento com Debounce")
+			console.log("Exemplo 3 - Evento com Debounce")
+			contador += 10
+			container.style.backgroundColor = `rgb(${95 + contador}, 158, ${160 + contador})`
 		}, 200)
+	})
+
+	container.addEventListener("mouseout", (event) => {
+		container.style.backgroundColor = `rgb(95, 158, 160)`
+		contador = 0
 	})
 }
 
-// Debounce1()
+/*
+-Debounce Genérico
+	Vamos tornar a função mais genérica, para que ela aceite qualquer evento como argumento e tenhamos o controle do seu tempo
+
+	*Para controlar o item passaremos no argumento #seletor
+	*Para controlar o seu tempo acrescentarmos como argumento #delay
+	*Para controlar o tipo event passaremos como argumento #evento
+*/
+function Debounce3(seletor, evento, delay) {
+	const container = document.querySelector(seletor)
+	let tempo = null
+
+	container.addEventListener(evento, (event) => {
+		clearTimeout(tempo)
+
+		tempo = setTimeout(() => {
+			console.log("Exemplo 4 - Evento com Debounce código mais genérico")
+		}, delay)
+	})
+} 
+
+Debounce1()
 Debounce2()
+Debounce3("#c4","mousemove", 500)
