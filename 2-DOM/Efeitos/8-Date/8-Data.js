@@ -4,7 +4,7 @@
    
    *Milisegundos desde 1º de janeiro de 1970 (UTC) 
    
-   Esse objeto é criado com base no relógio interno do sistema operacional do usuário ou do servidor backend e é importante saber que a contagem de datas, como dias da semana, mêses do ano, começam apartir no (0) zero.
+   Esse objeto é criado com base no relógio interno do sistema operacional do usuário ou do servidor backend e é importante saber que a contagem de datas, como dias da semana, meses do ano, começam apartir no (0) zero.
 
    *getTime()
       Vamos começar por esse método, que através dele podemos pegar o tempo total em milisegundos desde o 1º de janeiro de 1970.
@@ -12,27 +12,35 @@
 console.log("\n\tExemplo 1 - Date")
 const data = new Date
 
-console.log(data.getTime())
+console.log(data.getTime() + " ms desde 1º de janeiro de 1970")
 
 /*
    Aplicando várias métodos de lógica e matemática, podemos abter informações sobre várias coisas, mas existem também métodos que nos pode fornecer isso de maneira facilitada.
-*/ 
-console.log("\n\tExemplo 2 - Date e Métodos")
 
-//*Ano
-console.log(data.getFullYear())
-//*Mês
-console.log(data.getMonth())
-//*Dia do Mês
-console.log(data.getDate())
-//*Dia da Semana
-console.log(data.getDay())
-//*Hora
-console.log(data.getHours())
-//*Minutos
-console.log(data.getMinutes())
-//*Segundos
-console.log(data.getSeconds())
+   É importante observar que para o Mês e Dia da Semana os números começam do zero, como no index de uma lista
+*/ 
+console.log("\n\tExemplo 2 - Métodos de Data")
+
+   //*Ano Atual
+      console.log(data.getFullYear())
+
+   //*Mês Atual
+      console.log(data.getMonth())
+
+   //*Dia do Mês Atual
+      console.log(data.getDate())
+
+   //*Dia da Semana Atual
+      console.log(data.getDay())
+
+   //*Hora
+      console.log(data.getHours())
+
+   //*Minutos
+      console.log(data.getMinutes())
+
+   //*Segundos
+      console.log(data.getSeconds())
 
 /*
    *Criando um promoção
@@ -42,7 +50,7 @@ console.log("Criando um promoção")
 
 function promoçãoTempo() {
    const hoje = new Date()
-   const dataPromocao = new Date(2026, 1, 10, 23, 59, 0)
+   const dataPromocao = new Date(2026, 3, 30, 11, 59, 0)
    //Aqui criamos a data, ela é de trás para frente nos dias e segue natural em horas
 
    const promocao = document.querySelector(".promoçao")
@@ -51,7 +59,7 @@ function promoçãoTempo() {
 
    const diasFaltando = dataPromocao.getDate() - hoje.getDate()
    const tempoFaltando = (dataPromocao.getTime() - hoje.getTime())/1000
-   //Criamos as contantes para fazer a base de cálculo de dias faltantes
+   //Criamos as contantes para fazer a base de cálculo de dias faltantes, transfomando ms em s
 
    const horas = tempoFaltando/(60 * 60)
    const minutos = (tempoFaltando/(60 * 60) - Math.floor(tempoFaltando/(60 * 60))) * 60 
