@@ -1,0 +1,83 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+ul {
+   list-style: none;
+}
+
+.slide-pai {
+   display: flex;
+   align-items: center;
+   position: relative;
+}
+
+.opcao-pai {
+   position: absolute;
+   align-self: end;
+   display: flex;
+   gap: 10px;
+   left: 50%;
+   bottom: -40px;
+
+}
+
+.opcao {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: rgba(42, 42, 42, 0.615);
+   cursor: pointer;
+
+}
+
+.botao {
+   display: block;
+   width: 60px;
+   height: 60px;
+   background-color: rgba(245, 141, 29, 0.723);
+   border-radius: 50%;
+   cursor: pointer;
+   position: absolute;
+}
+
+#b1 {
+   left: 10px;
+   z-index: 3;
+}
+
+#b2 {
+   right: 10px;
+   z-index: 3;
+}
+
+.track {
+   margin: auto auto;
+   position: relative;
+
+   /* Abaixo temos configurações essênciais */
+   width: 1220px;
+   display: flex;
+   gap: 20px;
+   overflow: hidden; 
+}
+
+.slide {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 600px;
+   height: 300px;
+   background-color: rgb(82, 8, 150);
+   color: white;
+   font-size: 4rem;
+   transform: translate3d(-310px, 0, 0);
+   transition: 0.5s;
+   
+   /* Abaixo temos configurações essênciais */
+   flex-shrink: 0;
+}
+
+
+
